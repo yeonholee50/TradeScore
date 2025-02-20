@@ -2,48 +2,40 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 
-# URL of the MarketBeat analyst ratings page
-url = 'https://www.marketbeat.com/ratings/'
+# URL to scrape
+url = "https://www.marketbeat.com/ratings/by-issuer/evercore-isi-stock-recommendations/"  # Change if needed
 
-# Send a GET request to fetch the page content
-response = requests.get(url)
-response.raise_for_status()  # Check for request errors
+# Headers to mimic a real browser
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+}
 
-# Parse the HTML content using BeautifulSoup
-csv_filename = 'analyst_ratings.csv'
+# Fetch page content
+response = requests.get(url, headers=headers)
+soup = BeautifulSoup(response.text, "html.parser")
 
-soup = BeautifulSoup(response.text, 'html.parser')
-with open(csv_filename, 'w', newline='', encoding='utf-8') as csvfile:
-    csvwriter = csv.writer(csvfile)
-    csvwriter.writerow(soup)
-    
-# Find the table containing the analyst ratings
-table = soup.find('table', {'class': 'ratings-table'})
+# Open CSV file for writing
+with open("analyst_ratings.csv", "w", newline="", encoding="utf-8") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Ticker", "Company Name", "Brokerage", "Action", "Current Price", "Price Target", "Rating"])
 
-# Check if the table was found
-if not table:
-    print('Error: Ratings table not found on the page.')
-    exit()
+    # Find all table rows
+    for row in soup.find_all("tr"):
+        columns = row.find_all("td")
+        if len(columns) < 7:
+            continue  # Skip invalid rows
+        
+        # Extract values
+        ticker_name = columns[0].get("data-clean", "").split("|")
+        ticker, company = ticker_name if len(ticker_name) == 2 else ("", "")
 
-# Extract table headers
-headers = [header.text.strip() for header in table.find_all('th')]
+        action = columns[1].get("data-sort-value", "").strip()
+        brokerage = columns[2].get("data-sort-value", "").strip()
+        current_price = columns[4].get("data-clean", "").split("|")[0].strip()
+        price_target = columns[5].text.strip()
+        rating = columns[6].text.strip()
 
-# Extract table rows
-rows = []
-for row in table.find_all('tr')[1:]:  # Skip the header row
-    cols = row.find_all('td')
-    if len(cols) == 0:
-        continue  # Skip rows without data
-    row_data = [col.text.strip() for col in cols]
-    rows.append(row_data)
+        # Write to CSV
+        writer.writerow([ticker, company, brokerage, action, current_price, price_target, rating])
 
-# Define the CSV filename
-csv_filename = 'analyst_ratings.csv'
-
-# Write data to CSV
-with open(csv_filename, 'w', newline='', encoding='utf-8') as csvfile:
-    csvwriter = csv.writer(csvfile)
-    csvwriter.writerow(headers)  # Write header
-    csvwriter.writerows(rows)    # Write data rows
-
-print(f'Data successfully extracted and saved to {csv_filename}')
+print("Data successfully extracted and saved to analyst_ratings.csv")

@@ -1,0 +1,727 @@
+html,"
+","<html class=""dark"" lang=""en"">
+<head>
+<title>Managers - Latest 13F Filings</title>
+<meta charset=""utf-8""/><meta content=""width=1024"" name=""viewport""/><meta content=""Stock screener for investors and traders, financial visualizations."" name=""description""/>
+<link as=""font"" crossorigin="""" href=""/fonts/lato-v17-latin-ext_latin-regular.woff2"" rel=""preload""/>
+<link as=""font"" crossorigin="""" href=""/fonts/lato-v17-latin-ext_latin-700.woff2"" rel=""preload""/>
+<link as=""font"" crossorigin="""" href=""/fonts/lato-v17-latin-ext_latin-900.woff2"" rel=""preload""/>
+<link as=""font"" crossorigin="""" href=""/fonts/inter-latin.woff2"" rel=""preload""/>
+<script>
+                window.notificationsArray = [];
+                window.renderScriptNotLoaded = function () {};
+                window.handleScriptNotLoaded = function (element) {
+                    window.notificationsArray.push(element);
+                    window.sentryDisabled = true;
+                    window.handleScriptNotLoaded = function () {};
+                };
+            </script>
+<link href=""/assets/dist/redesign.6684559a.css"" onerror=""window.handleScriptNotLoaded(this)"" rel=""stylesheet"" type=""text/css""/>
+<link href=""/assets/dist/main.858c8b59.css"" onerror=""window.handleScriptNotLoaded(this)"" rel=""stylesheet"" type=""text/css""/>
+<link href=""/favicon_2x.png"" rel=""icon"" sizes=""32x32"" type=""image/png""/>
+<link href=""/favicon.png"" rel=""icon"" sizes=""16x16"" type=""image/png""/>
+<script async=""true"" type=""text/javascript"">
+  (function() {
+    var host = 'finviz.com';
+    var element = document.createElement('script');
+    var firstScript = document.getElementsByTagName('script')[0];
+    var url = 'https://cmp.inmobi.com'
+      .concat('/choice/', 'c2W8esUZ6Q8oA', '/', host, '/choice.js?tag_version=V3');
+    var uspTries = 0;
+    var uspTriesLimit = 3;
+    element.async = true;
+    element.type = 'text/javascript';
+    element.src = url;
+
+    firstScript.parentNode.insertBefore(element, firstScript);
+
+    function makeStub() {
+      var TCF_LOCATOR_NAME = '__tcfapiLocator';
+      var queue = [];
+      var win = window;
+      var cmpFrame;
+
+      function addFrame() {
+        var doc = win.document;
+        var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+        if (!otherCMP) {
+          if (doc.body) {
+            var iframe = doc.createElement('iframe');
+
+            iframe.style.cssText = 'display:none';
+            iframe.name = TCF_LOCATOR_NAME;
+            doc.body.appendChild(iframe);
+          } else {
+            setTimeout(addFrame, 5);
+          }
+        }
+        return !otherCMP;
+      }
+
+      function tcfAPIHandler() {
+        var gdprApplies;
+        var args = arguments;
+
+        if (!args.length) {
+          return queue;
+        } else if (args[0] === 'setGdprApplies') {
+          if (
+            args.length > 3 &&
+            args[2] === 2 &&
+            typeof args[3] === 'boolean'
+          ) {
+            gdprApplies = args[3];
+            if (typeof args[2] === 'function') {
+              args[2]('set', true);
+            }
+          }
+        } else if (args[0] === 'ping') {
+          var retr = {
+            gdprApplies: gdprApplies,
+            cmpLoaded: false,
+            cmpStatus: 'stub'
+          };
+
+          if (typeof args[2] === 'function') {
+            args[2](retr);
+          }
+        } else {
+          if(args[0] === 'init' && typeof args[3] === 'object') {
+            args[3] = Object.assign(args[3], { tag_version: 'V3' });
+          }
+          queue.push(args);
+        }
+      }
+
+      function postMessageEventHandler(event) {
+        var msgIsString = typeof event.data === 'string';
+        var json = {};
+
+        try {
+          if (msgIsString) {
+            json = JSON.parse(event.data);
+          } else {
+            json = event.data;
+          }
+        } catch (ignore) {}
+
+        var payload = json.__tcfapiCall;
+
+        if (payload) {
+          window.__tcfapi(
+            payload.command,
+            payload.version,
+            function(retValue, success) {
+              var returnMsg = {
+                __tcfapiReturn: {
+                  returnValue: retValue,
+                  success: success,
+                  callId: payload.callId
+                }
+              };
+              if (msgIsString) {
+                returnMsg = JSON.stringify(returnMsg);
+              }
+              if (event && event.source && event.source.postMessage) {
+                event.source.postMessage(returnMsg, '*');
+              }
+            },
+            payload.parameter
+          );
+        }
+      }
+
+      while (win) {
+        try {
+          if (win.frames[TCF_LOCATOR_NAME]) {
+            cmpFrame = win;
+            break;
+          }
+        } catch (ignore) {}
+
+        if (win === window.top) {
+          break;
+        }
+        win = win.parent;
+      }
+      if (!cmpFrame) {
+        addFrame();
+        win.__tcfapi = tcfAPIHandler;
+        win.addEventListener('message', postMessageEventHandler, false);
+      }
+    };
+
+    makeStub();
+
+    function makeGppStub() {
+      const CMP_ID = 10;
+      const SUPPORTED_APIS = [
+        '2:tcfeuv2',
+        '6:uspv1',
+        '7:usnatv1',
+        '8:usca',
+        '9:usvav1',
+        '10:uscov1',
+        '11:usutv1',
+        '12:usctv1'
+      ];
+
+      window.__gpp_addFrame = function (n) {
+        if (!window.frames[n]) {
+          if (document.body) {
+            var i = document.createElement(""iframe"");
+            i.style.cssText = ""display:none"";
+            i.name = n;
+            document.body.appendChild(i);
+          } else {
+            window.setTimeout(window.__gpp_addFrame, 10, n);
+          }
+        }
+      };
+      window.__gpp_stub = function () {
+        var b = arguments;
+        __gpp.queue = __gpp.queue || [];
+        __gpp.events = __gpp.events || [];
+
+        if (!b.length || (b.length == 1 && b[0] == ""queue"")) {
+          return __gpp.queue;
+        }
+
+        if (b.length == 1 && b[0] == ""events"") {
+          return __gpp.events;
+        }
+
+        var cmd = b[0];
+        var clb = b.length > 1 ? b[1] : null;
+        var par = b.length > 2 ? b[2] : null;
+        if (cmd === ""ping"") {
+          clb(
+            {
+              gppVersion: ""1.1"", // must be “Version.Subversion”, current: “1.1”
+              cmpStatus: ""stub"", // possible values: stub, loading, loaded, error
+              cmpDisplayStatus: ""hidden"", // possible values: hidden, visible, disabled
+              signalStatus: ""not ready"", // possible values: not ready, ready
+              supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+              cmpId: CMP_ID, // IAB assigned CMP ID, may be 0 during stub/loading
+              sectionList: [],
+              applicableSections: [-1],
+              gppString: """",
+              parsedSections: {},
+            },
+            true
+          );
+        } else if (cmd === ""addEventListener"") {
+          if (!(""lastId"" in __gpp)) {
+            __gpp.lastId = 0;
+          }
+          __gpp.lastId++;
+          var lnr = __gpp.lastId;
+          __gpp.events.push({
+            id: lnr,
+            callback: clb,
+            parameter: par,
+          });
+          clb(
+            {
+              eventName: ""listenerRegistered"",
+              listenerId: lnr, // Registered ID of the listener
+              data: true, // positive signal
+              pingData: {
+                gppVersion: ""1.1"", // must be “Version.Subversion”, current: “1.1”
+                cmpStatus: ""stub"", // possible values: stub, loading, loaded, error
+                cmpDisplayStatus: ""hidden"", // possible values: hidden, visible, disabled
+                signalStatus: ""not ready"", // possible values: not ready, ready
+                supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+                cmpId: CMP_ID, // list of supported APIs
+                sectionList: [],
+                applicableSections: [-1],
+                gppString: """",
+                parsedSections: {},
+              },
+            },
+            true
+          );
+        } else if (cmd === ""removeEventListener"") {
+          var success = false;
+          for (var i = 0; i < __gpp.events.length; i++) {
+            if (__gpp.events[i].id == par) {
+              __gpp.events.splice(i, 1);
+              success = true;
+              break;
+            }
+          }
+          clb(
+            {
+              eventName: ""listenerRemoved"",
+              listenerId: par, // Registered ID of the listener
+              data: success, // status info
+              pingData: {
+                gppVersion: ""1.1"", // must be “Version.Subversion”, current: “1.1”
+                cmpStatus: ""stub"", // possible values: stub, loading, loaded, error
+                cmpDisplayStatus: ""hidden"", // possible values: hidden, visible, disabled
+                signalStatus: ""not ready"", // possible values: not ready, ready
+                supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+                cmpId: CMP_ID, // CMP ID
+                sectionList: [],
+                applicableSections: [-1],
+                gppString: """",
+                parsedSections: {},
+              },
+            },
+            true
+          );
+        } else if (cmd === ""hasSection"") {
+          clb(false, true);
+        } else if (cmd === ""getSection"" || cmd === ""getField"") {
+          clb(null, true);
+        }
+        //queue all other commands
+        else {
+          __gpp.queue.push([].slice.apply(b));
+        }
+      };
+      window.__gpp_msghandler = function (event) {
+        var msgIsString = typeof event.data === ""string"";
+        try {
+          var json = msgIsString ? JSON.parse(event.data) : event.data;
+        } catch (e) {
+          var json = null;
+        }
+        if (typeof json === ""object"" && json !== null && ""__gppCall"" in json) {
+          var i = json.__gppCall;
+          window.__gpp(
+            i.command,
+            function (retValue, success) {
+              var returnMsg = {
+                __gppReturn: {
+                  returnValue: retValue,
+                  success: success,
+                  callId: i.callId,
+                },
+              };
+              event.source.postMessage(msgIsString ? JSON.stringify(returnMsg) : returnMsg, ""*"");
+            },
+            ""parameter"" in i ? i.parameter : null,
+            ""version"" in i ? i.version : ""1.1""
+          );
+        }
+      };
+      if (!(""__gpp"" in window) || typeof window.__gpp !== ""function"") {
+        window.__gpp = window.__gpp_stub;
+        window.addEventListener(""message"", window.__gpp_msghandler, false);
+        window.__gpp_addFrame(""__gppLocator"");
+      }
+    };
+
+    makeGppStub();
+
+    var uspStubFunction = function() {
+      var arg = arguments;
+      if (typeof window.__uspapi !== uspStubFunction) {
+        setTimeout(function() {
+          if (typeof window.__uspapi !== 'undefined') {
+            window.__uspapi.apply(window.__uspapi, arg);
+          }
+        }, 500);
+      }
+    };
+
+    var checkIfUspIsReady = function() {
+      uspTries++;
+      if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+        console.warn('USP is not accessible');
+      } else {
+        clearInterval(uspInterval);
+      }
+    };
+
+    if (typeof window.__uspapi === 'undefined') {
+      window.__uspapi = uspStubFunction;
+      var uspInterval = setInterval(checkIfUspIsReady, 6000);
+    }
+  })();
+  </script><script>
+            FinvizSettings = {
+                versionImages: 15,
+                hasUserPremium: false,
+                name: """",
+                email: """",
+                nodeChartsDomain: ""https://charts2-node.finviz.com"",
+                hasUserStickyHeader: true,
+                adsProvider: 1,
+                hasRedesignEnabled: true,
+                hasDarkTheme: true,
+                quoteSearchExt: '',
+                isJoinBannerVisible: false,
+            };
+        </script><script src=""/assets/dist/script/browser_check.7d9dede5.js""></script><script defer="""" src=""/assets/dist/script/vendor/boxover.e1f98bc2.js""></script>
+<script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/runtime.3837169d.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/libs_init.1e370dbd.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/1150.ff111a78.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/3143.45bb1d5d.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/5869.35a779df.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/8101.0ce91fd6.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/1597.da424f86.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/header.e49bba3f.js""></script><script>var ignoreOnClick = false;</script>
+<link as=""script"" data-chunk-id=""insider-managers"" href=""/assets/dist/1150.ff111a78.js"" rel=""preload""/><link as=""script"" data-chunk-id=""insider-managers"" href=""/assets/dist/7833.14f19d52.js"" rel=""preload""/><link as=""script"" data-chunk-id=""insider-managers"" href=""/assets/dist/9240.4a545843.js"" rel=""preload""/><link as=""script"" data-chunk-id=""insider-managers"" href=""/assets/dist/4821.6cdc01b0.js"" rel=""preload""/><link as=""script"" data-chunk-id=""insider-managers"" href=""/assets/dist/1965.f7760508.js"" rel=""preload""/><link as=""script"" data-chunk-id=""insider-managers"" href=""/assets/dist/9669.9296e037.js"" rel=""preload""/><link as=""script"" data-chunk-id=""insider-managers"" href=""/assets/dist/insider-managers.3f5b2b92.js"" rel=""preload""/></head>
+<body class=""m-0 is-insider min-w-[1009px] chart-tooltip"">
+<script>
+                window.adLayoutVersion = 'control';
+                window.adLoggedIn = 'NotLoggedIn';
+
+                var cookieName = 'fv_block';
+                var selector = '[data-google-query-id]';
+                var selectorFrame = selector + ' iframe, ' + selector + ' [id*=aax]';
+                var cookieExpiry = 5 * 60 * 1000; // 5min
+                var checkTimeout = 20 * 1000; // 20sec
+
+                function getCookie(value) {
+                    var expiration = +new Date() + cookieExpiry;
+                    return cookieName + '=' + value + '; expires=' + (new Date(expiration)).toUTCString() + '; path=/';
+                }
+
+                var finvizBannersLoaded = false;
+                function loadFinvizBanners(setCookie) {
+                    
+                    if (setCookie) document.cookie = getCookie('block');
+                    finvizBannersLoaded = true;
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '/assets/dist/script/finviz_b.86e39215.js';
+                    document.head.appendChild(s);
+                }
+
+                function checkBannersLoaded() {
+                    var checkEnd = +new Date() + checkTimeout;
+                    function asyncCheckIfExists(selector, resolve) {
+                        var now = +new Date();
+                        var container = document.querySelector(selector);
+                        if (!container && checkEnd > now) return setTimeout(function () { asyncCheckIfExists(selector, resolve) }, 1000)
+                        resolve(!!container);
+                    }
+
+                    asyncCheckIfExists(selector, function (exists) {
+                        if (!exists) return loadFinvizBanners(true);
+
+                        asyncCheckIfExists(selectorFrame, function (hasIframe) {
+                            if (!hasIframe) return loadFinvizBanners(true);
+                        })
+                    })
+                }
+
+                if (document.cookie.indexOf(cookieName) >= 0) {
+                    loadFinvizBanners(false);
+                } else {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.onerror = loadFinvizBanners;
+                    s.onload = checkBannersLoaded;
+                    s.src = 'https://u5.investingchannel.com/static/uat.js';
+                    document.head.appendChild(s);
+
+                    InvestingChannelQueue = window.InvestingChannelQueue || [];
+                    var ic_page;
+
+                    function refreshAd(container, refreshes) {
+                        var placementTag, adslot;
+                        window.InvestingChannelQueue.push(function () {
+                            var pubTags = ic_page.getPubTag.call(ic_page, container.id);
+                            if (!pubTags) return;
+                            var pubTag = pubTags[0];
+                            placementTag = pubTag.mPlacements[0].mTagToRender;
+                            adslot = pubTag.mPlacements[0].mPublisherKval.adslot[0];
+                            // Update div ID
+                            var id = container.id.split('_');
+                            var numberOfDivs = document.querySelectorAll('[id*=' + id.slice(0, id.length - 1).join('_') + ']').length;
+                            var newDivNumber = Number(id.pop()) + numberOfDivs * refreshes;
+                            container.setAttribute('id', id.join('_') + '_' + newDivNumber);
+                            // Destroy previous pubtag & reset container html (loading span)
+                            pubTag.destroy();
+                            container.innerHTML = '';
+                        });
+                        window.InvestingChannelQueue.push(function () {
+                            if (!placementTag || !adslot) return
+                            // Create new pub tag
+                            var newTag;
+                            var layoutId = placementTag.mNativeLayout ? placementTag.mNativeLayout.nativelayoutid : null;
+                            if (layoutId) {
+                                newTag = ic_page.defineNativeTag('finviz/' + placementTag.mTarget.dfpkeyname, placementTag.mAdSize, container.id, layoutId);
+                                var nativeLayout, layoutData
+
+                                try {
+                                  nativeLayout = newTag.mPlacements[0].mTags[0].mNativeLayout;
+                                } catch (e) {
+                                    console.log(e.message)
+                                }
+
+                                try {
+                                  layoutData = newTag.mTemplate.mNativeLayout[layoutId].Data
+                                  if (layoutData && nativeLayout && !nativeLayout.layout) {
+                                    newTag.mPlacements[0].mTags[0].mNativeLayout = layoutData
+                                  }
+                                } catch (e) {
+                                    console.log(e.message)
+                                }
+                            } else {
+                                newTag = ic_page.defineTag('finviz/' + placementTag.mTarget.dfpkeyname, placementTag.mAdSize, container.id);
+                            }
+                            // Set adslot param
+                            newTag.setKval({ adslot: adslot });
+                            newTag.setKval({ kw: 'ajax' });
+                            newTag.render();
+                        });
+                    }
+
+                    var refreshCount = 1;
+                    function refreshAds(selectors) {
+                        if (window.ic_page) {
+                            document.querySelectorAll(selectors).forEach(function (element) {
+                                try {
+                                    refreshAd(element, refreshCount);
+                                } catch (e) {
+                                    console.log('Ad refresh error for:', element, e);
+                                }
+                            });
+                            window.ic_page.loadMore();
+                            refreshCount++;
+                        }
+                    }
+
+
+                    InvestingChannelQueue.push(function() {
+                        var icConfig = window['FINVIZ_IC_UAT_CONFIG'] = {};
+                        
+                        ic_page = InvestingChannel.UAT.Run('df0d0d52-cc7f-11e8-82a5-0abbb61c4a6a', icConfig);
+                    });
+
+                    var hash = null;
+                    if (typeof hash === 'string') {
+                      InvestingChannelQueue.push(function() {
+                          if (ic_page) {
+                              ic_page.setUserId('email', hash, true);
+                          }
+                      });
+                    }
+                }
+            </script>
+<script>
+            function checkMediaQuery(matches) {
+              if (matches) {
+                FinvizSettings.hasUserStickyHeader = true;
+                document.body.classList.add('is-header-sticky');
+              } else {
+                FinvizSettings.hasUserStickyHeader = false;
+                document.body.classList.remove('is-header-sticky');
+              }
+            }
+            var mediaMatch = window.matchMedia('(min-width: 1025px) and (min-height: 650px)');
+            checkMediaQuery(mediaMatch.matches);
+            mediaMatch.addListener(function (ev) { checkMediaQuery(ev.matches) });
+          </script>
+<div id=""notifications-container""></div><table class=""header"">
+<tr class=""align-top"">
+<td>
+<table class=""header-container"">
+<tr>
+<td class=""w-[30%]"">
+<table class=""w-full"">
+<tr>
+<td class=""h-[50px] align-middle"">
+<a class=""logo"" href=""/""><svg class=""block"" height=""32"" width=""225"">
+<use class=""dark:hidden"" href=""/img/logo.svg#free""></use>
+<use class=""hidden dark:block"" href=""/img/logo.svg#free-dark""></use>
+</svg></a>
+</td>
+</tr>
+<tr>
+<td id=""search"" style=""padding-top: 7px"">
+<div class=""navbar-search-placeholder"">
+<span class=""icon-wrapper"">
+<svg class=""icon"" fill=""none"" viewbox=""0 0 24 24"" xmlns=""http://www.w3.org/2000/svg"">
+<path d=""M16.9 15.5l4 4c.2.2.1.5 0 .7l-.7.7a.5.5 0 01-.8 0l-4-4c0-.2-.2-.3-.3-.4l-.7-1a7 7 0 01-11.2-4 7 7 0 1112.2 3l1 .6.5.4zM5 10a5 5 0 1010 0 5 5 0 00-10 0z""></path>
+</svg>
+</span>
+<input class=""search-input is-free"" placeholder=""Search ticker, company or profile""/>
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td class=""align-bottom pb-1"">
+<div class=""hidden xl:flex items-center h-[37px] pl-2"" id=""microbar_position""><div>
+<div class=""relative overflow-hidden flex items-center justify-center w-full mx-auto"" id=""IC_D_88x31_1"" style=""width:88px;height:31px;max-height:31px""></div>
+</div></div>
+</td>
+<td class=""relative w-[730px] text-right"">
+<div class=""overflow-hidden absolute top-0 right-0 w-full h-[96px]"" id=""banner_position"">
+<div class=""relative overflow-hidden flex items-center justify-center w-full mx-auto"" id=""IC_D_728x90_1"" style=""width:728px;height:90px;max-height:90px""></div>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=""w-[994px] leading-none"" style=""font-size:0"">
+<img alt="""" class=""w-[994px] h-px"" src=""/gfx/nic2x2.gif""/>
+</td>
+</tr>
+</table>
+<table class=""navbar"">
+<tr>
+<td class=""h-[30px]"">
+<table class=""header-container"">
+<tr><td><a class=""nav-link is-first"" href=""/"">Home</a></td><td><a class=""nav-link"" href=""/news.ashx"">News</a></td><td><a class=""nav-link"" href=""/screener.ashx"">Screener</a></td><td><a class=""nav-link"" href=""/map.ashx"">Maps</a></td><td><a class=""nav-link"" href=""/groups.ashx"">Groups</a></td><td><a class=""nav-link"" href=""/portfolio.ashx"">Portfolio</a></td><td><a class=""nav-link is-active"" href=""/insidertrading.ashx"">Insider</a></td><td><a class=""nav-link"" href=""/futures.ashx"">Futures</a></td><td><a class=""nav-link"" href=""/forex.ashx"">Forex</a></td><td><a class=""nav-link"" href=""/crypto.ashx"">Crypto</a></td><td><a class=""nav-link"" href=""/elite.ashx?utm_source=finviz&amp;utm_medium=banner&amp;utm_campaign=main-navbar-backtests"">Backtests</a></td><td><a class=""nav-link is-elite"" href=""/elite.ashx"">Elite</a></td><td class=""w-full relative""><div class=""absolute bottom-0 left-0 right-0 top-0""><div class=""pr-1"" id=""time""></div></div></td>
+<td class=""nav relative"">
+<a class=""!flex !bg-transparent !border-b-0 mt-1 !py-0 !px-1"" data-testid=""chart-layout-theme"" href=""#"" onclick=""setChartThemeCookie('light', true)"" style=""border-left: 1px solid #444a57"" title=""Toggle Light/Dark mode"">
+<div class=""relative box-content flex rounded-full w-10 h-5 border border-gray-750 bg-gray-800 text-white justify-end"">
+<div class=""box-border w-1/2 rounded-full p-px border border-gray-800 bg-[#4c5261] flex justify-center items-center"">
+<svg class=""fill-current text-white inline-block -ml-px"" height=""16"" width=""16"">
+<use href=""/assets/dist-icons/icons.svg?rev=15#moonOutlined""></use>
+</svg>
+</div>
+</div>
+<span class=""ml-1 select-none font-medium text-xs text-white"">Theme</span>
+</a>
+</td>
+<td>
+<a class=""nav-link is-help"" href=""/help/screener.ashx"" style=""border-left: 1px solid #444a57""><span class=""fa fa-question-circle""></span>Help</a>
+</td>
+<td><a class=""nav-link sign-in"" href=""/login.ashx"">Login</a></td>
+<td><a class=""nav-link sign-up"" href=""/register.ashx"">Register</a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<script>
+            function reloadPage () { location.reload() }
+            function setChartThemeCookie(chartsTheme) {
+              fetch('/api/set_cookie.ashx?cookie=chartsTheme&value=' + chartsTheme ).catch(function(){}).then(function(){
+                window.gtag && window.gtag('event', 'click', { event_category: 'theme', event_label: 'toggle', value: chartsTheme, event_callback: reloadPage });
+                setTimeout(reloadPage,1000);
+              })
+            }
+          </script><div class=""font-sans flex-grow"" id=""root"" style=""min-height: 1448px""></div>
+<script id=""route-init-data"" type=""application/json"">{""items"":[{""filer"":{""investorId"":""1009012"",""investorType"":""manager_13f"",""reportDate"":""2024-12-31"",""filerCik"":1009012,""filerTicker"":null,""filerName"":""ZAZOVE ASSOCIATES LLC"",""countOfOtherManagers"":0,""otherManagerCik"":null,""otherManagerCleanedName"":null,""otherManagerName"":null,""seriesId"":null,""seriesLei"":null,""seriesName"":null},""latestSummaries"":[{""investorId"":""1009012"",""reportDate"":""2024-12-31"",""totalCountOfInvestments"":132,""totalSumOfUsdValue"":1038594931,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":20,""countOfSoldOut"":16,""countOfAddedTo"":25,""countOfReduced"":27,""percOfPortfolioOfTop10"":46.29509047738651,""turnoverPerc"":27.27272727272727,""timeHeldTop10"":6.4,""timeHeldTop20"":6.2,""timeHeldAll"":9.07,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2024-09-30"",""totalCountOfInvestments"":128,""totalSumOfUsdValue"":935150909,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":21,""countOfSoldOut"":25,""countOfAddedTo"":3,""countOfReduced"":99,""percOfPortfolioOfTop10"":53.89848388630503,""turnoverPerc"":35.9375,""timeHeldTop10"":4.9,""timeHeldTop20"":7.1,""timeHeldAll"":8.32,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2024-06-30"",""totalCountOfInvestments"":132,""totalSumOfUsdValue"":1725508100,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":27,""countOfSoldOut"":21,""countOfAddedTo"":18,""countOfReduced"":29,""percOfPortfolioOfTop10"":49.96931524111652,""turnoverPerc"":36.36363636363637,""timeHeldTop10"":5.8,""timeHeldTop20"":6.55,""timeHeldAll"":7.21,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2024-03-31"",""totalCountOfInvestments"":126,""totalSumOfUsdValue"":1475208000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":14,""countOfSoldOut"":23,""countOfAddedTo"":96,""countOfReduced"":6,""percOfPortfolioOfTop10"":54.709979880803246,""turnoverPerc"":29.365079365079367,""timeHeldTop10"":7.5,""timeHeldTop20"":6.9,""timeHeldAll"":6.56,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2023-12-31"",""totalCountOfInvestments"":134,""totalSumOfUsdValue"":803979000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":8,""countOfSoldOut"":23,""countOfAddedTo"":25,""countOfReduced"":41,""percOfPortfolioOfTop10"":53.10822795122758,""turnoverPerc"":23.134328358208954,""timeHeldTop10"":13.2,""timeHeldTop20"":12.4,""timeHeldAll"":9.75,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2023-09-30"",""totalCountOfInvestments"":149,""totalSumOfUsdValue"":964166000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":30,""countOfSoldOut"":16,""countOfAddedTo"":30,""countOfReduced"":28,""percOfPortfolioOfTop10"":44.691681722856856,""turnoverPerc"":30.87248322147651,""timeHeldTop10"":11,""timeHeldTop20"":11,""timeHeldAll"":8.43,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2023-06-30"",""totalCountOfInvestments"":135,""totalSumOfUsdValue"":1097033000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":13,""countOfSoldOut"":19,""countOfAddedTo"":26,""countOfReduced"":26,""percOfPortfolioOfTop10"":42.547671765571316,""turnoverPerc"":23.703703703703706,""timeHeldTop10"":8.3,""timeHeldTop20"":8.65,""timeHeldAll"":8.16,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2023-03-31"",""totalCountOfInvestments"":141,""totalSumOfUsdValue"":1099489000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":13,""countOfSoldOut"":21,""countOfAddedTo"":38,""countOfReduced"":36,""percOfPortfolioOfTop10"":40.14628613837883,""turnoverPerc"":24.113475177304963,""timeHeldTop10"":6.7,""timeHeldTop20"":6.8,""timeHeldAll"":6.52,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2022-12-31"",""totalCountOfInvestments"":149,""totalSumOfUsdValue"":1081139000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":22,""countOfSoldOut"":40,""countOfAddedTo"":31,""countOfReduced"":30,""percOfPortfolioOfTop10"":38.13394947365695,""turnoverPerc"":41.61073825503356,""timeHeldTop10"":12.2,""timeHeldTop20"":10.05,""timeHeldAll"":8.74,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2022-09-30"",""totalCountOfInvestments"":167,""totalSumOfUsdValue"":1105779000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":18,""countOfSoldOut"":36,""countOfAddedTo"":40,""countOfReduced"":20,""percOfPortfolioOfTop10"":38.256921138853244,""turnoverPerc"":32.33532934131736,""timeHeldTop10"":12,""timeHeldTop20"":9.3,""timeHeldAll"":8.04,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2022-06-30"",""totalCountOfInvestments"":184,""totalSumOfUsdValue"":1053237000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":37,""countOfSoldOut"":19,""countOfAddedTo"":30,""countOfReduced"":46,""percOfPortfolioOfTop10"":33.71150083029745,""turnoverPerc"":30.434782608695656,""timeHeldTop10"":9,""timeHeldTop20"":6.6,""timeHeldAll"":6.27,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2022-03-31"",""totalCountOfInvestments"":166,""totalSumOfUsdValue"":1134342000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":58,""countOfSoldOut"":45,""countOfAddedTo"":31,""countOfReduced"":27,""percOfPortfolioOfTop10"":37.456075857192985,""turnoverPerc"":62.048192771084345,""timeHeldTop10"":9.2,""timeHeldTop20"":6.95,""timeHeldAll"":4.48,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2021-09-30"",""totalCountOfInvestments"":154,""totalSumOfUsdValue"":1143699000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":27,""countOfSoldOut"":23,""countOfAddedTo"":26,""countOfReduced"":30,""percOfPortfolioOfTop10"":40.5088226884871,""turnoverPerc"":32.467532467532465,""timeHeldTop10"":8.4,""timeHeldTop20"":6.05,""timeHeldAll"":6.32,""isConfidentialOmitted"":false},{""investorId"":""1009012"",""reportDate"":""2021-06-30"",""totalCountOfInvestments"":151,""totalSumOfUsdValue"":1114758000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":50,""countOfSoldOut"":14,""countOfAddedTo"":23,""countOfReduced"":26,""percOfPortfolioOfTop10"":44.424529808263316,""turnoverPerc"":42.384105960264904,""timeHeldTop10"":7.5,""timeHeldTop20"":5.45,""timeHeldAll"":5.28,""isConfidentialOmitted"":false}],""topInvestments"":[{""ticker"":""VTR"",""boxoverData"":{""ticker"":""VTR"",""country"":""USA"",""company"":""Ventas Inc"",""industry"":""REIT - Healthcare Facilities"",""marketCap"":30000.554048330436},""value"":72191511,""putCall"":""share"",""percentageOfPortfolio"":6.950882278088068},{""ticker"":""MRK"",""boxoverData"":{""ticker"":""MRK"",""country"":""USA"",""company"":""Merck \u0026 Co Inc"",""industry"":""Drug Manufacturers - General"",""marketCap"":220457.7631986077},""value"":58963583,""putCall"":""share"",""percentageOfPortfolio"":5.677245405311919},{""ticker"":""AWK"",""boxoverData"":{""ticker"":""AWK"",""country"":""USA"",""company"":""American Water Works Co. Inc"",""industry"":""Utilities - Regulated Water"",""marketCap"":25243.626980668025},""value"":48645804,""putCall"":""share"",""percentageOfPortfolio"":4.683809110560737},{""ticker"":""DUK"",""boxoverData"":{""ticker"":""DUK"",""country"":""USA"",""company"":""Duke Energy Corp"",""industry"":""Utilities - Regulated Electric"",""marketCap"":87558.01667794502},""value"":48543525,""putCall"":""share"",""percentageOfPortfolio"":4.6739612866452545},{""ticker"":""AKAM"",""boxoverData"":{""ticker"":""AKAM"",""country"":""USA"",""company"":""Akamai Technologies Inc"",""industry"":""Software - Infrastructure"",""marketCap"":14679.401597533999},""value"":47249626,""putCall"":""share"",""percentageOfPortfolio"":4.549379607938795},{""ticker"":""PPL"",""boxoverData"":{""ticker"":""PPL"",""country"":""USA"",""company"":""PPL Corp"",""industry"":""Utilities - Regulated Electric"",""marketCap"":25212.74101862735},""value"":44395687,""putCall"":""share"",""percentageOfPortfolio"":4.274591149530654},{""ticker"":""F"",""boxoverData"":{""ticker"":""F"",""country"":""USA"",""company"":""Ford Motor Co"",""industry"":""Auto Manufacturers"",""marketCap"":37038.417690944174},""value"":42954489,""putCall"":""share"",""percentageOfPortfolio"":4.135826944450974},{""ticker"":""TTEK"",""boxoverData"":{""ticker"":""TTEK"",""country"":""USA"",""company"":""Tetra Tech, Inc"",""industry"":""Engineering \u0026 Construction"",""marketCap"":8075.925597569442},""value"":41938583,""putCall"":""share"",""percentageOfPortfolio"":4.03801152385944}]},{""filer"":{""investorId"":""2023325"",""investorType"":""manager_13f"",""reportDate"":""2024-12-31"",""filerCik"":2023325,""filerTicker"":null,""filerName"":""LRI Investments, LLC"",""countOfOtherManagers"":0,""otherManagerCik"":null,""otherManagerCleanedName"":null,""otherManagerName"":null,""seriesId"":null,""seriesLei"":null,""seriesName"":null},""latestSummaries"":[{""investorId"":""2023325"",""reportDate"":""2024-12-31"",""totalCountOfInvestments"":1151,""totalSumOfUsdValue"":1038158557,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":40,""countOfSoldOut"":33,""countOfAddedTo"":199,""countOfReduced"":176,""percOfPortfolioOfTop10"":69.1036643837055,""turnoverPerc"":6.34231103388358,""timeHeldTop10"":6.9,""timeHeldTop20"":6.95,""timeHeldAll"":6.39,""isConfidentialOmitted"":false},{""investorId"":""2023325"",""reportDate"":""2024-09-30"",""totalCountOfInvestments"":1142,""totalSumOfUsdValue"":1030765121,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":89,""countOfSoldOut"":81,""countOfAddedTo"":315,""countOfReduced"":259,""percOfPortfolioOfTop10"":67.72292230093804,""turnoverPerc"":14.886164623467602,""timeHeldTop10"":5.9,""timeHeldTop20"":5.95,""timeHeldAll"":5.29,""isConfidentialOmitted"":false},{""investorId"":""2023325"",""reportDate"":""2024-06-30"",""totalCountOfInvestments"":1134,""totalSumOfUsdValue"":878669936,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":310,""countOfSoldOut"":17,""countOfAddedTo"":336,""countOfReduced"":47,""percOfPortfolioOfTop10"":69.53396468546069,""turnoverPerc"":28.835978835978835,""timeHeldTop10"":4.5,""timeHeldTop20"":4.75,""timeHeldAll"":3.63,""isConfidentialOmitted"":false},{""investorId"":""2023325"",""reportDate"":""2024-03-31"",""totalCountOfInvestments"":841,""totalSumOfUsdValue"":395966893,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":841,""countOfSoldOut"":0,""countOfAddedTo"":0,""countOfReduced"":0,""percOfPortfolioOfTop10"":61.710422088242616,""turnoverPerc"":100,""timeHeldTop10"":0,""timeHeldTop20"":0,""timeHeldAll"":0,""isConfidentialOmitted"":false}],""topInvestments"":[{""ticker"":""ARES"",""boxoverData"":{""ticker"":""ARES"",""country"":""USA"",""company"":""Ares Management Corp"",""industry"":""Asset Management"",""marketCap"":55595.643222751925},""value"":460132127,""putCall"":""share"",""percentageOfPortfolio"":44.321951006179496},{""ticker"":""DFAC"",""boxoverData"":{""ticker"":""DFAC"",""country"":""USA"",""company"":""Dimensional U.S. Core Equity 2 ETF"",""industry"":""Exchange Traded Fund"",""aum"":34083.296459},""value"":85913264,""putCall"":""share"",""percentageOfPortfolio"":8.27554359791305},{""ticker"":""AGO"",""boxoverData"":{""ticker"":""AGO"",""country"":""Bermuda"",""company"":""Assured Guaranty Ltd"",""industry"":""Insurance - Specialty"",""marketCap"":4609.323542721155},""value"":26368610,""putCall"":""share"",""percentageOfPortfolio"":2.539940534343638},{""ticker"":""DLN"",""boxoverData"":{""ticker"":""DLN"",""country"":""USA"",""company"":""WisdomTree U.S. LargeCap Dividend Fund"",""industry"":""Exchange Traded Fund"",""aum"":4836.643224},""value"":26271550,""putCall"":""share"",""percentageOfPortfolio"":2.5305912880897248},{""ticker"":""DFAI"",""boxoverData"":{""ticker"":""DFAI"",""country"":""USA"",""company"":""Dimensional International Core Equity Market ETF"",""industry"":""Exchange Traded Fund"",""aum"":8663.6459},""value"":26135021,""putCall"":""share"",""percentageOfPortfolio"":2.5174402140963137},{""ticker"":""DFAX"",""boxoverData"":{""ticker"":""DFAX"",""country"":""USA"",""company"":""Dimensional World ex U.S. Core Equity 2 ETF"",""industry"":""Exchange Traded Fund"",""aum"":7534.173657},""value"":24692270,""putCall"":""share"",""percentageOfPortfolio"":2.3784680898218515},{""ticker"":""DWM"",""boxoverData"":{""ticker"":""DWM"",""country"":""USA"",""company"":""WisdomTree International Equity Fund"",""industry"":""Exchange Traded Fund"",""aum"":510.871034},""value"":20585354,""putCall"":""share"",""percentageOfPortfolio"":1.9828718706982638},{""ticker"":""AAPL"",""boxoverData"":{""ticker"":""AAPL"",""country"":""USA"",""company"":""Apple Inc"",""industry"":""Consumer Electronics"",""marketCap"":3685665.760190805},""value"":19260794,""putCall"":""share"",""percentageOfPortfolio"":1.855284423571919}]},{""filer"":{""investorId"":""1008877"",""investorType"":""manager_13f"",""reportDate"":""2024-12-31"",""filerCik"":1008877,""filerTicker"":null,""filerName"":""WOODSTOCK CORP"",""countOfOtherManagers"":0,""otherManagerCik"":null,""otherManagerCleanedName"":null,""otherManagerName"":null,""seriesId"":null,""seriesLei"":null,""seriesName"":null},""latestSummaries"":[{""investorId"":""1008877"",""reportDate"":""2024-12-31"",""totalCountOfInvestments"":156,""totalSumOfUsdValue"":1038043712,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":2,""countOfSoldOut"":11,""countOfAddedTo"":42,""countOfReduced"":70,""percOfPortfolioOfTop10"":40.84409289307462,""turnoverPerc"":8.333333333333332,""timeHeldTop10"":39.4,""timeHeldTop20"":39.2,""timeHeldAll"":32.19,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2024-09-30"",""totalCountOfInvestments"":165,""totalSumOfUsdValue"":1039260707,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":5,""countOfSoldOut"":5,""countOfAddedTo"":50,""countOfReduced"":67,""percOfPortfolioOfTop10"":38.50447325725747,""turnoverPerc"":6.0606060606060606,""timeHeldTop10"":39.2,""timeHeldTop20"":38.2,""timeHeldAll"":29.85,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2024-06-30"",""totalCountOfInvestments"":165,""totalSumOfUsdValue"":983431764,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":2,""countOfSoldOut"":2,""countOfAddedTo"":43,""countOfReduced"":75,""percOfPortfolioOfTop10"":40.24997305252792,""turnoverPerc"":2.4242424242424243,""timeHeldTop10"":37,""timeHeldTop20"":36.8,""timeHeldAll"":29.43,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2024-03-31"",""totalCountOfInvestments"":165,""totalSumOfUsdValue"":966023837,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":2,""countOfSoldOut"":3,""countOfAddedTo"":44,""countOfReduced"":68,""percOfPortfolioOfTop10"":37.70311197817782,""turnoverPerc"":3.0303030303030303,""timeHeldTop10"":36,""timeHeldTop20"":35.8,""timeHeldAll"":27.98,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2023-12-31"",""totalCountOfInvestments"":166,""totalSumOfUsdValue"":863568473,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":5,""countOfSoldOut"":7,""countOfAddedTo"":47,""countOfReduced"":70,""percOfPortfolioOfTop10"":36.02110726893107,""turnoverPerc"":7.228915662650602,""timeHeldTop10"":35.4,""timeHeldTop20"":36.3,""timeHeldAll"":28.64,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2023-09-30"",""totalCountOfInvestments"":168,""totalSumOfUsdValue"":797456358,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":5,""countOfSoldOut"":7,""countOfAddedTo"":39,""countOfReduced"":64,""percOfPortfolioOfTop10"":35.19914314859598,""turnoverPerc"":7.142857142857142,""timeHeldTop10"":34.4,""timeHeldTop20"":35.3,""timeHeldAll"":27.88,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2023-06-30"",""totalCountOfInvestments"":170,""totalSumOfUsdValue"":847463277,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":6,""countOfSoldOut"":4,""countOfAddedTo"":40,""countOfReduced"":79,""percOfPortfolioOfTop10"":35.81384258612542,""turnoverPerc"":5.88235294117647,""timeHeldTop10"":33.8,""timeHeldTop20"":32.8,""timeHeldAll"":26.66,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2023-03-31"",""totalCountOfInvestments"":168,""totalSumOfUsdValue"":784133973,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":5,""countOfSoldOut"":6,""countOfAddedTo"":45,""countOfReduced"":63,""percOfPortfolioOfTop10"":33.02612065247171,""turnoverPerc"":6.547619047619048,""timeHeldTop10"":32.8,""timeHeldTop20"":32.2,""timeHeldAll"":25.62,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2022-12-31"",""totalCountOfInvestments"":169,""totalSumOfUsdValue"":752409687,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":10,""countOfSoldOut"":4,""countOfAddedTo"":40,""countOfReduced"":74,""percOfPortfolioOfTop10"":30.416808682049833,""turnoverPerc"":8.284023668639055,""timeHeldTop10"":33.2,""timeHeldTop20"":31.6,""timeHeldAll"":26.04,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2022-09-30"",""totalCountOfInvestments"":162,""totalSumOfUsdValue"":672177000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":1,""countOfSoldOut"":5,""countOfAddedTo"":47,""countOfReduced"":73,""percOfPortfolioOfTop10"":31.21603387203073,""turnoverPerc"":3.7037037037037033,""timeHeldTop10"":33.2,""timeHeldTop20"":30.2,""timeHeldAll"":25.88,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2022-06-30"",""totalCountOfInvestments"":165,""totalSumOfUsdValue"":720484000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":1,""countOfSoldOut"":15,""countOfAddedTo"":47,""countOfReduced"":64,""percOfPortfolioOfTop10"":30.838575180017877,""turnoverPerc"":9.696969696969697,""timeHeldTop10"":29.8,""timeHeldTop20"":28.75,""timeHeldAll"":24.4,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2022-03-31"",""totalCountOfInvestments"":178,""totalSumOfUsdValue"":853951000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":4,""countOfSoldOut"":12,""countOfAddedTo"":24,""countOfReduced"":131,""percOfPortfolioOfTop10"":32.60444685936313,""turnoverPerc"":8.98876404494382,""timeHeldTop10"":28.8,""timeHeldTop20"":27.55,""timeHeldAll"":21.46,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2021-12-31"",""totalCountOfInvestments"":185,""totalSumOfUsdValue"":955038000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":5,""countOfSoldOut"":10,""countOfAddedTo"":62,""countOfReduced"":61,""percOfPortfolioOfTop10"":34.50323442627414,""turnoverPerc"":8.108108108108109,""timeHeldTop10"":28.2,""timeHeldTop20"":28.3,""timeHeldAll"":21.6,""isConfidentialOmitted"":false},{""investorId"":""1008877"",""reportDate"":""2021-09-30"",""totalCountOfInvestments"":188,""totalSumOfUsdValue"":857501000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":5,""countOfSoldOut"":12,""countOfAddedTo"":45,""countOfReduced"":72,""percOfPortfolioOfTop10"":32.90176921076477,""turnoverPerc"":9.042553191489363,""timeHeldTop10"":24.4,""timeHeldTop20"":26.15,""timeHeldAll"":20.51,""isConfidentialOmitted"":false}],""topInvestments"":[{""ticker"":""NVDA"",""boxoverData"":{""ticker"":""NVDA"",""country"":""USA"",""company"":""NVIDIA Corp"",""industry"":""Semiconductors"",""marketCap"":3417824.3448535097},""value"":94856279,""putCall"":""share"",""percentageOfPortfolio"":9.137985029285549},{""ticker"":""MSFT"",""boxoverData"":{""ticker"":""MSFT"",""country"":""USA"",""company"":""Microsoft Corporation"",""industry"":""Software - Infrastructure"",""marketCap"":3101197.131897481},""value"":68776998,""putCall"":""share"",""percentageOfPortfolio"":6.625636011752076},{""ticker"":""ORLY"",""boxoverData"":{""ticker"":""ORLY"",""country"":""USA"",""company"":""O\u0027Reilly Automotive, Inc"",""industry"":""Specialty Retail"",""marketCap"":75392.08007871358},""value"":48099605,""putCall"":""share"",""percentageOfPortfolio"":4.633678181752716},{""ticker"":""ISRG"",""boxoverData"":{""ticker"":""ISRG"",""country"":""USA"",""company"":""Intuitive Surgical Inc"",""industry"":""Medical Instruments \u0026 Supplies"",""marketCap"":215479.65427632994},""value"":45414174,""putCall"":""share"",""percentageOfPortfolio"":4.374977033722449},{""ticker"":""AAPL"",""boxoverData"":{""ticker"":""AAPL"",""country"":""USA"",""company"":""Apple Inc"",""industry"":""Consumer Electronics"",""marketCap"":3685665.760190805},""value"":43191195,""putCall"":""share"",""percentageOfPortfolio"":4.160826225398878},{""ticker"":""GOOG"",""boxoverData"":{""ticker"":""GOOG"",""country"":""USA"",""company"":""Alphabet Inc"",""industry"":""Internet Content \u0026 Information"",""marketCap"":2256905.9952591965},""value"":31262633,""putCall"":""share"",""percentageOfPortfolio"":3.0116875270855643},{""ticker"":""FTNT"",""boxoverData"":{""ticker"":""FTNT"",""country"":""USA"",""company"":""Fortinet Inc"",""industry"":""Software - Infrastructure"",""marketCap"":87107.3548841257},""value"":27416301,""putCall"":""share"",""percentageOfPortfolio"":2.641150915232364},{""ticker"":""HD"",""boxoverData"":{""ticker"":""HD"",""country"":""USA"",""company"":""Home Depot, Inc"",""industry"":""Home Improvement Retail"",""marketCap"":390590.1907790391},""value"":23293888,""putCall"":""share"",""percentageOfPortfolio"":2.2440180245511665}]},{""filer"":{""investorId"":""1765216"",""investorType"":""manager_13f"",""reportDate"":""2024-12-31"",""filerCik"":1765216,""filerTicker"":null,""filerName"":""Magnus Financial Group LLC"",""countOfOtherManagers"":0,""otherManagerCik"":null,""otherManagerCleanedName"":null,""otherManagerName"":null,""seriesId"":null,""seriesLei"":null,""seriesName"":null},""latestSummaries"":[{""investorId"":""1765216"",""reportDate"":""2024-12-31"",""totalCountOfInvestments"":364,""totalSumOfUsdValue"":1036353096,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":47,""countOfSoldOut"":22,""countOfAddedTo"":205,""countOfReduced"":93,""percOfPortfolioOfTop10"":37.45279620412308,""turnoverPerc"":18.956043956043956,""timeHeldTop10"":21.8,""timeHeldTop20"":18.4,""timeHeldAll"":13.36,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2024-09-30"",""totalCountOfInvestments"":341,""totalSumOfUsdValue"":983702606,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":36,""countOfSoldOut"":12,""countOfAddedTo"":203,""countOfReduced"":79,""percOfPortfolioOfTop10"":38.18015940073661,""turnoverPerc"":14.076246334310852,""timeHeldTop10"":20.4,""timeHeldTop20"":17.45,""timeHeldAll"":13.28,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2024-06-30"",""totalCountOfInvestments"":317,""totalSumOfUsdValue"":890181556,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":24,""countOfSoldOut"":21,""countOfAddedTo"":194,""countOfReduced"":82,""percOfPortfolioOfTop10"":36.896238614047405,""turnoverPerc"":14.195583596214512,""timeHeldTop10"":19,""timeHeldTop20"":15.8,""timeHeldAll"":12.67,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2024-03-31"",""totalCountOfInvestments"":314,""totalSumOfUsdValue"":842954497,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":31,""countOfSoldOut"":5,""countOfAddedTo"":183,""countOfReduced"":82,""percOfPortfolioOfTop10"":39.334207146414926,""turnoverPerc"":11.464968152866243,""timeHeldTop10"":16.8,""timeHeldTop20"":14.15,""timeHeldAll"":11.36,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2023-12-31"",""totalCountOfInvestments"":288,""totalSumOfUsdValue"":763460694,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":37,""countOfSoldOut"":13,""countOfAddedTo"":146,""countOfReduced"":87,""percOfPortfolioOfTop10"":41.02620009930727,""turnoverPerc"":17.36111111111111,""timeHeldTop10"":17.1,""timeHeldTop20"":14.55,""timeHeldAll"":13.1,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2023-09-30"",""totalCountOfInvestments"":264,""totalSumOfUsdValue"":686387616,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":12,""countOfSoldOut"":19,""countOfAddedTo"":141,""countOfReduced"":91,""percOfPortfolioOfTop10"":42.31811883389224,""turnoverPerc"":11.742424242424242,""timeHeldTop10"":14.5,""timeHeldTop20"":14,""timeHeldAll"":12.9,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2023-06-30"",""totalCountOfInvestments"":272,""totalSumOfUsdValue"":702424689,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":16,""countOfSoldOut"":22,""countOfAddedTo"":126,""countOfReduced"":111,""percOfPortfolioOfTop10"":41.070540446222836,""turnoverPerc"":13.970588235294118,""timeHeldTop10"":13.1,""timeHeldTop20"":11.85,""timeHeldAll"":11.59,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2023-03-31"",""totalCountOfInvestments"":278,""totalSumOfUsdValue"":656836156,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":26,""countOfSoldOut"":15,""countOfAddedTo"":152,""countOfReduced"":74,""percOfPortfolioOfTop10"":41.00780195175492,""turnoverPerc"":14.748201438848922,""timeHeldTop10"":12.8,""timeHeldTop20"":11,""timeHeldAll"":9.78,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2022-12-31"",""totalCountOfInvestments"":268,""totalSumOfUsdValue"":614296687,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":27,""countOfSoldOut"":13,""countOfAddedTo"":112,""countOfReduced"":111,""percOfPortfolioOfTop10"":39.50398335780053,""turnoverPerc"":14.925373134328357,""timeHeldTop10"":13.9,""timeHeldTop20"":11.65,""timeHeldAll"":10.94,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2022-09-30"",""totalCountOfInvestments"":254,""totalSumOfUsdValue"":523526000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":21,""countOfSoldOut"":41,""countOfAddedTo"":135,""countOfReduced"":79,""percOfPortfolioOfTop10"":40.63599515592348,""turnoverPerc"":24.409448818897637,""timeHeldTop10"":13.9,""timeHeldTop20"":12.2,""timeHeldAll"":10.41,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2022-06-30"",""totalCountOfInvestments"":274,""totalSumOfUsdValue"":544046000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":18,""countOfSoldOut"":34,""countOfAddedTo"":176,""countOfReduced"":64,""percOfPortfolioOfTop10"":39.81115567433636,""turnoverPerc"":18.97810218978102,""timeHeldTop10"":12.7,""timeHeldTop20"":10.9,""timeHeldAll"":9.26,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2022-03-31"",""totalCountOfInvestments"":294,""totalSumOfUsdValue"":598634000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":52,""countOfSoldOut"":19,""countOfAddedTo"":176,""countOfReduced"":49,""percOfPortfolioOfTop10"":40.69965955826097,""turnoverPerc"":24.149659863945576,""timeHeldTop10"":11.2,""timeHeldTop20"":10.4,""timeHeldAll"":7.22,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2021-12-31"",""totalCountOfInvestments"":263,""totalSumOfUsdValue"":526364000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":39,""countOfSoldOut"":17,""countOfAddedTo"":160,""countOfReduced"":45,""percOfPortfolioOfTop10"":43.817966274289276,""turnoverPerc"":21.292775665399237,""timeHeldTop10"":10.5,""timeHeldTop20"":11,""timeHeldAll"":8.69,""isConfidentialOmitted"":false},{""investorId"":""1765216"",""reportDate"":""2021-09-30"",""totalCountOfInvestments"":242,""totalSumOfUsdValue"":472526000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":15,""countOfSoldOut"":15,""countOfAddedTo"":145,""countOfReduced"":44,""percOfPortfolioOfTop10"":46.16909968975252,""turnoverPerc"":12.396694214876034,""timeHeldTop10"":9.5,""timeHeldTop20"":9.7,""timeHeldAll"":8.46,""isConfidentialOmitted"":false}],""topInvestments"":[{""ticker"":""SPYV"",""boxoverData"":{""ticker"":""SPYV"",""country"":""USA"",""company"":""SPDR Portfolio S\u0026P 500 Value ETF"",""industry"":""Exchange Traded Fund"",""aum"":25823.043871},""value"":85093438,""putCall"":""share"",""percentageOfPortfolio"":8.210853842038409},{""ticker"":""VUG"",""boxoverData"":{""ticker"":""VUG"",""country"":""USA"",""company"":""Vanguard Growth ETF"",""industry"":""Exchange Traded Fund"",""aum"":163551.777587},""value"":53551655,""putCall"":""share"",""percentageOfPortfolio"":5.167317510479073},{""ticker"":""IJH"",""boxoverData"":{""ticker"":""IJH"",""country"":""USA"",""company"":""iShares Core S\u0026P Mid-Cap ETF"",""industry"":""Exchange Traded Fund"",""aum"":97852.154971},""value"":46396469,""putCall"":""share"",""percentageOfPortfolio"":4.476897804336756},{""ticker"":""IJR"",""boxoverData"":{""ticker"":""IJR"",""country"":""USA"",""company"":""iShares Core S\u0026P Small-Cap ETF"",""industry"":""Exchange Traded Fund"",""aum"":88650.871818},""value"":35825899,""putCall"":""share"",""percentageOfPortfolio"":3.4569201499254265},{""ticker"":""JEPI"",""boxoverData"":{""ticker"":""JEPI"",""country"":""USA"",""company"":""JPMorgan Equity Premium Income ETF"",""industry"":""Exchange Traded Fund"",""aum"":39718.697707},""value"":33017024,""putCall"":""share"",""percentageOfPortfolio"":3.18588559511574},{""ticker"":""AAPL"",""boxoverData"":{""ticker"":""AAPL"",""country"":""USA"",""company"":""Apple Inc"",""industry"":""Consumer Electronics"",""marketCap"":3685665.760190805},""value"":32562092,""putCall"":""share"",""percentageOfPortfolio"":3.1419882012877203},{""ticker"":""TPYP"",""boxoverData"":{""ticker"":""TPYP"",""country"":""USA"",""company"":""Tortoise North American Pipeline Fund ETF"",""industry"":""Exchange Traded Fund"",""aum"":731.441999},""value"":28392095,""putCall"":""share"",""percentageOfPortfolio"":2.7396159773714808},{""ticker"":""FPE"",""boxoverData"":{""ticker"":""FPE"",""country"":""USA"",""company"":""First Trust Preferred Securities and Income ETF"",""industry"":""Exchange Traded Fund"",""aum"":5853.34555},""value"":26235900,""putCall"":""share"",""percentageOfPortfolio"":2.531559957823487}]},{""filer"":{""investorId"":""1510099"",""investorType"":""manager_13f"",""reportDate"":""2024-12-31"",""filerCik"":1510099,""filerTicker"":null,""filerName"":""SG Capital Management LLC"",""countOfOtherManagers"":0,""otherManagerCik"":null,""otherManagerCleanedName"":null,""otherManagerName"":null,""seriesId"":null,""seriesLei"":null,""seriesName"":null},""latestSummaries"":[{""investorId"":""1510099"",""reportDate"":""2024-12-31"",""totalCountOfInvestments"":57,""totalSumOfUsdValue"":1034807190,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":33,""countOfSoldOut"":32,""countOfAddedTo"":11,""countOfReduced"":12,""percOfPortfolioOfTop10"":51.81909810657577,""turnoverPerc"":114.03508771929825,""timeHeldTop10"":2.7,""timeHeldTop20"":3.35,""timeHeldAll"":3,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2024-09-30"",""totalCountOfInvestments"":60,""totalSumOfUsdValue"":704003090,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":32,""countOfSoldOut"":36,""countOfAddedTo"":10,""countOfReduced"":12,""percOfPortfolioOfTop10"":56.9149733419494,""turnoverPerc"":113.33333333333333,""timeHeldTop10"":4.4,""timeHeldTop20"":2.7,""timeHeldAll"":3.28,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2024-06-30"",""totalCountOfInvestments"":68,""totalSumOfUsdValue"":591710972,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":50,""countOfSoldOut"":31,""countOfAddedTo"":8,""countOfReduced"":8,""percOfPortfolioOfTop10"":43.121150709370326,""turnoverPerc"":119.11764705882352,""timeHeldTop10"":1.1,""timeHeldTop20"":1.1,""timeHeldAll"":1.57,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2024-03-31"",""totalCountOfInvestments"":51,""totalSumOfUsdValue"":305366166,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":32,""countOfSoldOut"":19,""countOfAddedTo"":8,""countOfReduced"":10,""percOfPortfolioOfTop10"":45.79603655239264,""turnoverPerc"":100,""timeHeldTop10"":1.4,""timeHeldTop20"":1.5,""timeHeldAll"":1.12,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2023-12-31"",""totalCountOfInvestments"":44,""totalSumOfUsdValue"":336982833,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":21,""countOfSoldOut"":26,""countOfAddedTo"":8,""countOfReduced"":14,""percOfPortfolioOfTop10"":58.99398798157769,""turnoverPerc"":106.81818181818181,""timeHeldTop10"":5.5,""timeHeldTop20"":3.6,""timeHeldAll"":3.77,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2023-09-30"",""totalCountOfInvestments"":52,""totalSumOfUsdValue"":267962110,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":28,""countOfSoldOut"":26,""countOfAddedTo"":10,""countOfReduced"":11,""percOfPortfolioOfTop10"":54.01637044879219,""turnoverPerc"":103.84615384615385,""timeHeldTop10"":2.6,""timeHeldTop20"":3.4,""timeHeldAll"":3.23,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2023-06-30"",""totalCountOfInvestments"":50,""totalSumOfUsdValue"":243772055,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":30,""countOfSoldOut"":27,""countOfAddedTo"":5,""countOfReduced"":14,""percOfPortfolioOfTop10"":42.37229201681875,""turnoverPerc"":113.99999999999999,""timeHeldTop10"":2.2,""timeHeldTop20"":1.95,""timeHeldAll"":2.38,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2023-03-31"",""totalCountOfInvestments"":50,""totalSumOfUsdValue"":292471004,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":26,""countOfSoldOut"":24,""countOfAddedTo"":14,""countOfReduced"":9,""percOfPortfolioOfTop10"":50.986222552167945,""turnoverPerc"":100,""timeHeldTop10"":3.1,""timeHeldTop20"":1.65,""timeHeldAll"":1.36,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2022-12-31"",""totalCountOfInvestments"":49,""totalSumOfUsdValue"":178618043,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":27,""countOfSoldOut"":28,""countOfAddedTo"":5,""countOfReduced"":13,""percOfPortfolioOfTop10"":48.01606912690225,""turnoverPerc"":112.24489795918366,""timeHeldTop10"":2.4,""timeHeldTop20"":3.1,""timeHeldAll"":3.27,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2022-09-30"",""totalCountOfInvestments"":53,""totalSumOfUsdValue"":214270000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":25,""countOfSoldOut"":16,""countOfAddedTo"":8,""countOfReduced"":19,""percOfPortfolioOfTop10"":51.156484808885985,""turnoverPerc"":77.35849056603774,""timeHeldTop10"":3,""timeHeldTop20"":2,""timeHeldAll"":3.36,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2022-06-30"",""totalCountOfInvestments"":46,""totalSumOfUsdValue"":159416000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":24,""countOfSoldOut"":31,""countOfAddedTo"":12,""countOfReduced"":9,""percOfPortfolioOfTop10"":50.176268379585494,""turnoverPerc"":119.56521739130434,""timeHeldTop10"":4.5,""timeHeldTop20"":3.4,""timeHeldAll"":2.43,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2022-03-31"",""totalCountOfInvestments"":53,""totalSumOfUsdValue"":204195000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":27,""countOfSoldOut"":30,""countOfAddedTo"":9,""countOfReduced"":16,""percOfPortfolioOfTop10"":51.41751756899042,""turnoverPerc"":107.54716981132076,""timeHeldTop10"":2.6,""timeHeldTop20"":1.7,""timeHeldAll"":1.66,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2021-12-31"",""totalCountOfInvestments"":57,""totalSumOfUsdValue"":265249000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":23,""countOfSoldOut"":14,""countOfAddedTo"":10,""countOfReduced"":21,""percOfPortfolioOfTop10"":48.271624021202726,""turnoverPerc"":64.91228070175438,""timeHeldTop10"":4.3,""timeHeldTop20"":5,""timeHeldAll"":3.89,""isConfidentialOmitted"":false},{""investorId"":""1510099"",""reportDate"":""2021-09-30"",""totalCountOfInvestments"":50,""totalSumOfUsdValue"":249122000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":22,""countOfSoldOut"":35,""countOfAddedTo"":11,""countOfReduced"":17,""percOfPortfolioOfTop10"":48.58382639831087,""turnoverPerc"":113.99999999999999,""timeHeldTop10"":3.6,""timeHeldTop20"":3.15,""timeHeldAll"":3.2,""isConfidentialOmitted"":false}],""topInvestments"":[{""ticker"":""BRKR"",""boxoverData"":{""ticker"":""BRKR"",""country"":""USA"",""company"":""Bruker Corp"",""industry"":""Medical Devices"",""marketCap"":8087.580737330491},""value"":80816463,""putCall"":""share"",""percentageOfPortfolio"":7.8098088011931965},{""ticker"":""WNS"",""boxoverData"":{""ticker"":""WNS"",""country"":""India"",""company"":""WNS (Holdings) Limited"",""industry"":""Information Technology Services"",""marketCap"":2629.1000506210326},""value"":71881105,""putCall"":""share"",""percentageOfPortfolio"":6.946328330014792},{""ticker"":""HAE"",""boxoverData"":{""ticker"":""HAE"",""country"":""USA"",""company"":""Haemonetics Corp"",""industry"":""Medical Instruments \u0026 Supplies"",""marketCap"":3184.053557992597},""value"":68617016,""putCall"":""share"",""percentageOfPortfolio"":6.630898650791169},{""ticker"":""ATGE"",""boxoverData"":{""ticker"":""ATGE"",""country"":""USA"",""company"":""Adtalem Global Education Inc"",""industry"":""Education \u0026 Training Services"",""marketCap"":3901.444193543789},""value"":65781305,""putCall"":""share"",""percentageOfPortfolio"":6.356865862132249},{""ticker"":""BRKR"",""boxoverData"":{""ticker"":""BRKR"",""country"":""USA"",""company"":""Bruker Corp"",""industry"":""Medical Devices"",""marketCap"":8087.580737330491},""value"":59135856,""putCall"":""put"",""percentageOfPortfolio"":5.714673861127695},{""ticker"":""CLS"",""boxoverData"":{""ticker"":""CLS"",""country"":""Canada"",""company"":""Celestica, Inc"",""industry"":""Electronic Components"",""marketCap"":14470.529671020508},""value"":48297821,""putCall"":""share"",""percentageOfPortfolio"":4.667325610677289},{""ticker"":""WLY"",""boxoverData"":{""ticker"":""WLY"",""country"":""USA"",""company"":""John Wiley \u0026 Sons Inc"",""industry"":""Publishing"",""marketCap"":2148.68569137035},""value"":41409149,""putCall"":""share"",""percentageOfPortfolio"":4.001629424318167},{""ticker"":""TER"",""boxoverData"":{""ticker"":""TER"",""country"":""USA"",""company"":""Teradyne, Inc"",""industry"":""Semiconductor Equipment \u0026 Materials"",""marketCap"":19118.303182976775},""value"":35299909,""putCall"":""share"",""percentageOfPortfolio"":3.4112547091985324}]},{""filer"":{""investorId"":""1767840"",""investorType"":""manager_13f"",""reportDate"":""2022-12-31"",""filerCik"":1767840,""filerTicker"":null,""filerName"":""SEEYOND"",""countOfOtherManagers"":1,""otherManagerCik"":null,""otherManagerCleanedName"":null,""otherManagerName"":null,""seriesId"":null,""seriesLei"":null,""seriesName"":null},""latestSummaries"":[{""investorId"":""1767840"",""reportDate"":""2022-12-31"",""totalCountOfInvestments"":602,""totalSumOfUsdValue"":1033698458,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":22,""countOfSoldOut"":24,""countOfAddedTo"":253,""countOfReduced"":320,""percOfPortfolioOfTop10"":13.224456604539114,""turnoverPerc"":7.641196013289036,""timeHeldTop10"":16,""timeHeldTop20"":15.8,""timeHeldAll"":14.41,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2022-09-30"",""totalCountOfInvestments"":604,""totalSumOfUsdValue"":829531000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":16,""countOfSoldOut"":13,""countOfAddedTo"":142,""countOfReduced"":440,""percOfPortfolioOfTop10"":12.512491998490713,""turnoverPerc"":4.801324503311259,""timeHeldTop10"":15,""timeHeldTop20"":14.7,""timeHeldAll"":13.6,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2022-06-30"",""totalCountOfInvestments"":601,""totalSumOfUsdValue"":878878000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":14,""countOfSoldOut"":5,""countOfAddedTo"":225,""countOfReduced"":361,""percOfPortfolioOfTop10"":11.550977496307793,""turnoverPerc"":3.1613976705490847,""timeHeldTop10"":13.6,""timeHeldTop20"":13.8,""timeHeldAll"":12.47,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2022-03-31"",""totalCountOfInvestments"":592,""totalSumOfUsdValue"":1004459000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":12,""countOfSoldOut"":19,""countOfAddedTo"":203,""countOfReduced"":376,""percOfPortfolioOfTop10"":12.108906386422941,""turnoverPerc"":5.236486486486487,""timeHeldTop10"":13,""timeHeldTop20"":12.81,""timeHeldAll"":11.57,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2021-12-31"",""totalCountOfInvestments"":599,""totalSumOfUsdValue"":1078666000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":8,""countOfSoldOut"":11,""countOfAddedTo"":102,""countOfReduced"":269,""percOfPortfolioOfTop10"":12.468085579780952,""turnoverPerc"":3.1719532554257093,""timeHeldTop10"":12,""timeHeldTop20"":12,""timeHeldAll"":11.23,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2021-09-30"",""totalCountOfInvestments"":601,""totalSumOfUsdValue"":1036490000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":19,""countOfSoldOut"":15,""countOfAddedTo"":191,""countOfReduced"":391,""percOfPortfolioOfTop10"":12.636976719505254,""turnoverPerc"":5.657237936772046,""timeHeldTop10"":11,""timeHeldTop20"":11,""timeHeldAll"":10.1,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2021-06-30"",""totalCountOfInvestments"":597,""totalSumOfUsdValue"":1073530000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":6,""countOfSoldOut"":5,""countOfAddedTo"":387,""countOfReduced"":201,""percOfPortfolioOfTop10"":13.323148864028019,""turnoverPerc"":1.8425460636515913,""timeHeldTop10"":10,""timeHeldTop20"":10,""timeHeldAll"":9.06,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2021-03-31"",""totalCountOfInvestments"":596,""totalSumOfUsdValue"":997134000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":6,""countOfSoldOut"":12,""countOfAddedTo"":274,""countOfReduced"":196,""percOfPortfolioOfTop10"":13.517842135560517,""turnoverPerc"":3.0201342281879198,""timeHeldTop10"":9,""timeHeldTop20"":9,""timeHeldAll"":8.01,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2020-12-31"",""totalCountOfInvestments"":602,""totalSumOfUsdValue"":966151000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":21,""countOfSoldOut"":20,""countOfAddedTo"":151,""countOfReduced"":427,""percOfPortfolioOfTop10"":13.534944330648107,""turnoverPerc"":6.810631229235881,""timeHeldTop10"":8,""timeHeldTop20"":7.9,""timeHeldAll"":7.57,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2020-09-30"",""totalCountOfInvestments"":600,""totalSumOfUsdValue"":920840000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":8,""countOfSoldOut"":8,""countOfAddedTo"":429,""countOfReduced"":157,""percOfPortfolioOfTop10"":15.814147951870032,""turnoverPerc"":2.666666666666667,""timeHeldTop10"":6.8,""timeHeldTop20"":6.9,""timeHeldAll"":6.75,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2020-06-30"",""totalCountOfInvestments"":600,""totalSumOfUsdValue"":881719000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":31,""countOfSoldOut"":52,""countOfAddedTo"":246,""countOfReduced"":321,""percOfPortfolioOfTop10"":16.379368029950587,""turnoverPerc"":13.833333333333334,""timeHeldTop10"":6,""timeHeldTop20"":5.5,""timeHeldAll"":5.47,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2020-03-31"",""totalCountOfInvestments"":621,""totalSumOfUsdValue"":722449000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":6,""countOfSoldOut"":13,""countOfAddedTo"":99,""countOfReduced"":510,""percOfPortfolioOfTop10"":17.96749666758484,""turnoverPerc"":3.059581320450886,""timeHeldTop10"":5,""timeHeldTop20"":4.59,""timeHeldAll"":4.67,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2019-12-31"",""totalCountOfInvestments"":628,""totalSumOfUsdValue"":953552000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":26,""countOfSoldOut"":25,""countOfAddedTo"":69,""countOfReduced"":255,""percOfPortfolioOfTop10"":11.055715891739519,""turnoverPerc"":8.121019108280255,""timeHeldTop10"":4,""timeHeldTop20"":4,""timeHeldAll"":3.99,""isConfidentialOmitted"":false},{""investorId"":""1767840"",""reportDate"":""2019-09-30"",""totalCountOfInvestments"":627,""totalSumOfUsdValue"":962202000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":9,""countOfSoldOut"":15,""countOfAddedTo"":181,""countOfReduced"":264,""percOfPortfolioOfTop10"":13.338467390423217,""turnoverPerc"":3.827751196172249,""timeHeldTop10"":3,""timeHeldTop20"":3,""timeHeldAll"":3.11,""isConfidentialOmitted"":false}],""topInvestments"":[{""ticker"":""AAPL"",""boxoverData"":{""ticker"":""AAPL"",""country"":""USA"",""company"":""Apple Inc"",""industry"":""Consumer Electronics"",""marketCap"":3685665.760190805},""value"":27725763,""putCall"":""share"",""percentageOfPortfolio"":2.6821906123033026},{""ticker"":""MSFT"",""boxoverData"":{""ticker"":""MSFT"",""country"":""USA"",""company"":""Microsoft Corporation"",""industry"":""Software - Infrastructure"",""marketCap"":3101197.131897481},""value"":23625867,""putCall"":""share"",""percentageOfPortfolio"":2.285566628948188},{""ticker"":""SPY"",""boxoverData"":{""ticker"":""SPY"",""country"":""USA"",""company"":""SPDR S\u0026P 500 ETF Trust"",""industry"":""Exchange Traded Fund"",""aum"":637581.571412},""value"":15680163,""putCall"":""share"",""percentageOfPortfolio"":1.5168991381043542},{""ticker"":""JNJ"",""boxoverData"":{""ticker"":""JNJ"",""country"":""USA"",""company"":""Johnson \u0026 Johnson"",""industry"":""Drug Manufacturers - General"",""marketCap"":384344.2143965888},""value"":11111815,""putCall"":""share"",""percentageOfPortfolio"":1.0749571032058172},{""ticker"":""GILD"",""boxoverData"":{""ticker"":""GILD"",""country"":""USA"",""company"":""Gilead Sciences, Inc"",""industry"":""Drug Manufacturers - General"",""marketCap"":136142.32534247547},""value"":10822509,""putCall"":""share"",""percentageOfPortfolio"":1.0469696376387552},{""ticker"":""GOOG"",""boxoverData"":{""ticker"":""GOOG"",""country"":""USA"",""company"":""Alphabet Inc"",""industry"":""Internet Content \u0026 Information"",""marketCap"":2256905.9952591965},""value"":10020989,""putCall"":""share"",""percentageOfPortfolio"":0.9694305841752546},{""ticker"":""AMZN"",""boxoverData"":{""ticker"":""AMZN"",""country"":""USA"",""company"":""Amazon.com Inc"",""industry"":""Internet Retail"",""marketCap"":2356193.0049508503},""value"":9619428,""putCall"":""share"",""percentageOfPortfolio"":0.9305835686948465},{""ticker"":""BDX"",""boxoverData"":{""ticker"":""BDX"",""country"":""USA"",""company"":""Becton Dickinson \u0026 Co"",""industry"":""Medical Instruments \u0026 Supplies"",""marketCap"":65044.780892684765},""value"":9481830,""putCall"":""share"",""percentageOfPortfolio"":0.917272336687572}]},{""filer"":{""investorId"":""1880785"",""investorType"":""manager_13f"",""reportDate"":""2024-12-31"",""filerCik"":1880785,""filerTicker"":null,""filerName"":""AE INDUSTRIAL PARTNERS, LP"",""countOfOtherManagers"":0,""otherManagerCik"":null,""otherManagerCleanedName"":null,""otherManagerName"":null,""seriesId"":null,""seriesLei"":null,""seriesName"":null},""latestSummaries"":[{""investorId"":""1880785"",""reportDate"":""2024-12-31"",""totalCountOfInvestments"":5,""totalSumOfUsdValue"":1033646782,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":5,""countOfSoldOut"":0,""countOfAddedTo"":0,""countOfReduced"":0,""percOfPortfolioOfTop10"":100,""turnoverPerc"":100,""timeHeldTop10"":0,""timeHeldTop20"":0,""timeHeldAll"":0,""isConfidentialOmitted"":false}],""topInvestments"":[{""ticker"":""RDW"",""boxoverData"":{""ticker"":""RDW"",""country"":""USA"",""company"":""Redwire Corporation"",""industry"":""Aerospace \u0026 Defense"",""marketCap"":1318.1979565463464},""value"":587972894,""putCall"":""share"",""percentageOfPortfolio"":56.88334779723622},{""ticker"":""BBAI"",""boxoverData"":{""ticker"":""BBAI"",""country"":""USA"",""company"":""BigBear.ai Holdings Inc"",""industry"":""Information Technology Services"",""marketCap"":1837.60197210339},""value"":284720545,""putCall"":""share"",""percentageOfPortfolio"":27.545245625308784},{""ticker"":""CTSH"",""boxoverData"":{""ticker"":""CTSH"",""country"":""USA"",""company"":""Cognizant Technology Solutions Corp"",""industry"":""Information Technology Services"",""marketCap"":43131.70900448006},""value"":113088235,""putCall"":""share"",""percentageOfPortfolio"":10.940704017013038},{""ticker"":""RDWWS"",""value"":32920000,""putCall"":""share"",""percentageOfPortfolio"":3.184840370353903},{""ticker"":""VSEC"",""boxoverData"":{""ticker"":""VSEC"",""country"":""USA"",""company"":""VSE Corp"",""industry"":""Aerospace \u0026 Defense"",""marketCap"":2062.6054064302566},""value"":14945108,""putCall"":""share"",""percentageOfPortfolio"":1.4458621900880644}]},{""filer"":{""investorId"":""1473429"",""investorType"":""manager_13f"",""reportDate"":""2024-12-31"",""filerCik"":1473429,""filerTicker"":null,""filerName"":""Petrus Trust Company, LTA"",""countOfOtherManagers"":0,""otherManagerCik"":null,""otherManagerCleanedName"":null,""otherManagerName"":null,""seriesId"":null,""seriesLei"":null,""seriesName"":null},""latestSummaries"":[{""investorId"":""1473429"",""reportDate"":""2024-12-31"",""totalCountOfInvestments"":572,""totalSumOfUsdValue"":1033399793,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":238,""countOfSoldOut"":200,""countOfAddedTo"":134,""countOfReduced"":140,""percOfPortfolioOfTop10"":53.5512603881468,""turnoverPerc"":76.57342657342657,""timeHeldTop10"":21.9,""timeHeldTop20"":19.9,""timeHeldAll"":5.66,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2024-09-30"",""totalCountOfInvestments"":536,""totalSumOfUsdValue"":1026041434,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":212,""countOfSoldOut"":250,""countOfAddedTo"":129,""countOfReduced"":159,""percOfPortfolioOfTop10"":52.89670455939892,""turnoverPerc"":86.19402985074626,""timeHeldTop10"":20.1,""timeHeldTop20"":18.4,""timeHeldAll"":4.87,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2024-06-30"",""totalCountOfInvestments"":576,""totalSumOfUsdValue"":1071140369,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":181,""countOfSoldOut"":215,""countOfAddedTo"":150,""countOfReduced"":125,""percOfPortfolioOfTop10"":49.35135732896647,""turnoverPerc"":68.75,""timeHeldTop10"":20.7,""timeHeldTop20"":19.15,""timeHeldAll"":4.18,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2024-03-31"",""totalCountOfInvestments"":610,""totalSumOfUsdValue"":1106253590,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":235,""countOfSoldOut"":210,""countOfAddedTo"":130,""countOfReduced"":173,""percOfPortfolioOfTop10"":45.472789923330325,""turnoverPerc"":72.95081967213115,""timeHeldTop10"":22.1,""timeHeldTop20"":16.9,""timeHeldAll"":2.75,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2023-12-31"",""totalCountOfInvestments"":585,""totalSumOfUsdValue"":1054533218,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":225,""countOfSoldOut"":196,""countOfAddedTo"":132,""countOfReduced"":140,""percOfPortfolioOfTop10"":43.56980957616453,""turnoverPerc"":71.96581196581197,""timeHeldTop10"":24.6,""timeHeldTop20"":19.3,""timeHeldAll"":4.64,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2023-09-30"",""totalCountOfInvestments"":556,""totalSumOfUsdValue"":934209023,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":203,""countOfSoldOut"":211,""countOfAddedTo"":165,""countOfReduced"":114,""percOfPortfolioOfTop10"":43.22685887824057,""turnoverPerc"":74.46043165467626,""timeHeldTop10"":24.8,""timeHeldTop20"":18.55,""timeHeldAll"":4.06,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2023-06-30"",""totalCountOfInvestments"":566,""totalSumOfUsdValue"":889581112,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":253,""countOfSoldOut"":210,""countOfAddedTo"":168,""countOfReduced"":103,""percOfPortfolioOfTop10"":45.28451240318151,""turnoverPerc"":81.80212014134275,""timeHeldTop10"":23.4,""timeHeldTop20"":17.3,""timeHeldAll"":2.81,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2023-03-31"",""totalCountOfInvestments"":523,""totalSumOfUsdValue"":824797790,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":263,""countOfSoldOut"":209,""countOfAddedTo"":99,""countOfReduced"":124,""percOfPortfolioOfTop10"":48.77120112070135,""turnoverPerc"":90.24856596558317,""timeHeldTop10"":19.9,""timeHeldTop20"":17,""timeHeldAll"":1.48,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2022-12-31"",""totalCountOfInvestments"":469,""totalSumOfUsdValue"":787314978,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":334,""countOfSoldOut"":100,""countOfAddedTo"":96,""countOfReduced"":28,""percOfPortfolioOfTop10"":47.407096451809146,""turnoverPerc"":92.53731343283582,""timeHeldTop10"":21.7,""timeHeldTop20"":18.7,""timeHeldAll"":2.37,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2022-09-30"",""totalCountOfInvestments"":236,""totalSumOfUsdValue"":703064000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":155,""countOfSoldOut"":53,""countOfAddedTo"":47,""countOfReduced"":18,""percOfPortfolioOfTop10"":50.75000284469124,""turnoverPerc"":88.13559322033898,""timeHeldTop10"":20.9,""timeHeldTop20"":15,""timeHeldAll"":3.16,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2022-06-30"",""totalCountOfInvestments"":134,""totalSumOfUsdValue"":700648000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":98,""countOfSoldOut"":32,""countOfAddedTo"":17,""countOfReduced"":5,""percOfPortfolioOfTop10"":54.75174409974766,""turnoverPerc"":97.01492537313433,""timeHeldTop10"":18.8,""timeHeldTop20"":14,""timeHeldAll"":3.62,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2022-03-31"",""totalCountOfInvestments"":68,""totalSumOfUsdValue"":782094000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":37,""countOfSoldOut"":104,""countOfAddedTo"":15,""countOfReduced"":12,""percOfPortfolioOfTop10"":55.83459277273576,""turnoverPerc"":207.3529411764706,""timeHeldTop10"":16.2,""timeHeldTop20"":11.4,""timeHeldAll"":5.09,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2021-12-31"",""totalCountOfInvestments"":135,""totalSumOfUsdValue"":855832000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":90,""countOfSoldOut"":37,""countOfAddedTo"":24,""countOfReduced"":12,""percOfPortfolioOfTop10"":55.34216995859,""turnoverPerc"":94.07407407407408,""timeHeldTop10"":18,""timeHeldTop20"":13.65,""timeHeldAll"":4.57,""isConfidentialOmitted"":false},{""investorId"":""1473429"",""reportDate"":""2021-09-30"",""totalCountOfInvestments"":82,""totalSumOfUsdValue"":903273000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":32,""countOfSoldOut"":32,""countOfAddedTo"":18,""countOfReduced"":14,""percOfPortfolioOfTop10"":47.53856253867878,""turnoverPerc"":78.04878048780488,""timeHeldTop10"":15,""timeHeldTop20"":13.3,""timeHeldAll"":11.26,""isConfidentialOmitted"":false}],""topInvestments"":[{""ticker"":""SPY"",""boxoverData"":{""ticker"":""SPY"",""country"":""USA"",""company"":""SPDR S\u0026P 500 ETF Trust"",""industry"":""Exchange Traded Fund"",""aum"":637581.571412},""value"":86852367,""putCall"":""share"",""percentageOfPortfolio"":8.40452723024689},{""ticker"":""CPAY"",""boxoverData"":{""ticker"":""CPAY"",""country"":""USA"",""company"":""Corpay Inc"",""industry"":""Software - Infrastructure"",""marketCap"":25606.24159221301},""value"":68087735,""putCall"":""share"",""percentageOfPortfolio"":6.58871188684281},{""ticker"":""AMZN"",""boxoverData"":{""ticker"":""AMZN"",""country"":""USA"",""company"":""Amazon.com Inc"",""industry"":""Internet Retail"",""marketCap"":2356193.0049508503},""value"":65201611,""putCall"":""share"",""percentageOfPortfolio"":6.30942752666102},{""ticker"":""UNH"",""boxoverData"":{""ticker"":""UNH"",""country"":""USA"",""company"":""Unitedhealth Group Inc"",""industry"":""Healthcare Plans"",""marketCap"":461945.9027669334},""value"":59944410,""putCall"":""share"",""percentageOfPortfolio"":5.80069885885878},{""ticker"":""MSFT"",""boxoverData"":{""ticker"":""MSFT"",""country"":""USA"",""company"":""Microsoft Corporation"",""industry"":""Software - Infrastructure"",""marketCap"":3101197.131897481},""value"":57672159,""putCall"":""share"",""percentageOfPortfolio"":5.5808177426255785},{""ticker"":""CRM"",""boxoverData"":{""ticker"":""CRM"",""country"":""USA"",""company"":""Salesforce Inc"",""industry"":""Software - Application"",""marketCap"":305426.545307782},""value"":50985325,""putCall"":""share"",""percentageOfPortfolio"":4.933746391799403},{""ticker"":""MA"",""boxoverData"":{""ticker"":""MA"",""country"":""USA"",""company"":""Mastercard Incorporated"",""industry"":""Credit Services"",""marketCap"":510524.8823205072},""value"":42324643,""putCall"":""share"",""percentageOfPortfolio"":4.095669777243705},{""ticker"":""AON"",""boxoverData"":{""ticker"":""AON"",""country"":""Ireland"",""company"":""Aon plc"",""industry"":""Insurance Brokers"",""marketCap"":84186.43533584871},""value"":42201300,""putCall"":""share"",""percentageOfPortfolio"":4.08373412553993}]},{""filer"":{""investorId"":""1044936"",""investorType"":""manager_13f"",""reportDate"":""2024-12-31"",""filerCik"":1044936,""filerTicker"":null,""filerName"":""NEUMEIER POMA INVESTMENT COUNSEL LLC"",""countOfOtherManagers"":0,""otherManagerCik"":null,""otherManagerCleanedName"":null,""otherManagerName"":null,""seriesId"":null,""seriesLei"":null,""seriesName"":null},""latestSummaries"":[{""investorId"":""1044936"",""reportDate"":""2024-12-31"",""totalCountOfInvestments"":43,""totalSumOfUsdValue"":1031773002,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":5,""countOfSoldOut"":5,""countOfAddedTo"":11,""countOfReduced"":27,""percOfPortfolioOfTop10"":37.95696158368757,""turnoverPerc"":23.25581395348837,""timeHeldTop10"":15,""timeHeldTop20"":16.5,""timeHeldAll"":16.02,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2024-09-30"",""totalCountOfInvestments"":43,""totalSumOfUsdValue"":1049827027,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":2,""countOfSoldOut"":1,""countOfAddedTo"":11,""countOfReduced"":30,""percOfPortfolioOfTop10"":37.873934541027964,""turnoverPerc"":6.976744186046512,""timeHeldTop10"":20,""timeHeldTop20"":18.5,""timeHeldAll"":16.26,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2024-06-30"",""totalCountOfInvestments"":42,""totalSumOfUsdValue"":1092362783,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":5,""countOfSoldOut"":4,""countOfAddedTo"":9,""countOfReduced"":28,""percOfPortfolioOfTop10"":39.77656422957793,""turnoverPerc"":21.428571428571427,""timeHeldTop10"":22.1,""timeHeldTop20"":16.45,""timeHeldAll"":14.05,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2024-03-31"",""totalCountOfInvestments"":41,""totalSumOfUsdValue"":1090476714,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":5,""countOfSoldOut"":3,""countOfAddedTo"":6,""countOfReduced"":30,""percOfPortfolioOfTop10"":42.14573709824307,""turnoverPerc"":19.51219512195122,""timeHeldTop10"":18.2,""timeHeldTop20"":14.65,""timeHeldAll"":12.9,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2023-12-31"",""totalCountOfInvestments"":39,""totalSumOfUsdValue"":1122481208,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":3,""countOfSoldOut"":7,""countOfAddedTo"":15,""countOfReduced"":21,""percOfPortfolioOfTop10"":40.07429325266709,""turnoverPerc"":25.64102564102564,""timeHeldTop10"":21,""timeHeldTop20"":21.45,""timeHeldAll"":16.92,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2023-09-30"",""totalCountOfInvestments"":43,""totalSumOfUsdValue"":1024241324,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":3,""countOfSoldOut"":2,""countOfAddedTo"":27,""countOfReduced"":13,""percOfPortfolioOfTop10"":39.317600116669375,""turnoverPerc"":11.627906976744185,""timeHeldTop10"":22.9,""timeHeldTop20"":19.85,""timeHeldAll"":15.49,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2023-06-30"",""totalCountOfInvestments"":42,""totalSumOfUsdValue"":1093158616,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":3,""countOfSoldOut"":3,""countOfAddedTo"":14,""countOfReduced"":25,""percOfPortfolioOfTop10"":38.45329779663009,""turnoverPerc"":14.285714285714285,""timeHeldTop10"":21.5,""timeHeldTop20"":17.5,""timeHeldAll"":13.95,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2023-03-31"",""totalCountOfInvestments"":42,""totalSumOfUsdValue"":1072857918,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":3,""countOfSoldOut"":2,""countOfAddedTo"":10,""countOfReduced"":29,""percOfPortfolioOfTop10"":40.89179327844603,""turnoverPerc"":11.904761904761903,""timeHeldTop10"":19,""timeHeldTop20"":17.45,""timeHeldAll"":12.29,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2022-12-31"",""totalCountOfInvestments"":41,""totalSumOfUsdValue"":1076681966,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":3,""countOfSoldOut"":4,""countOfAddedTo"":18,""countOfReduced"":20,""percOfPortfolioOfTop10"":41.44495450757833,""turnoverPerc"":17.073170731707318,""timeHeldTop10"":21.3,""timeHeldTop20"":20.85,""timeHeldAll"":15.15,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2022-09-30"",""totalCountOfInvestments"":42,""totalSumOfUsdValue"":1009953000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":4,""countOfSoldOut"":5,""countOfAddedTo"":5,""countOfReduced"":33,""percOfPortfolioOfTop10"":42.11126656388961,""turnoverPerc"":21.428571428571427,""timeHeldTop10"":19.9,""timeHeldTop20"":18.7,""timeHeldAll"":14.93,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2022-06-30"",""totalCountOfInvestments"":43,""totalSumOfUsdValue"":1278584000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":3,""countOfSoldOut"":0,""countOfAddedTo"":16,""countOfReduced"":24,""percOfPortfolioOfTop10"":40.299972469544436,""turnoverPerc"":6.976744186046512,""timeHeldTop10"":21,""timeHeldTop20"":17.35,""timeHeldAll"":14.74,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2022-03-31"",""totalCountOfInvestments"":40,""totalSumOfUsdValue"":1490066000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":4,""countOfSoldOut"":3,""countOfAddedTo"":6,""countOfReduced"":30,""percOfPortfolioOfTop10"":40.99422441690502,""turnoverPerc"":17.5,""timeHeldTop10"":20.1,""timeHeldTop20"":17.85,""timeHeldAll"":13.25,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2021-12-31"",""totalCountOfInvestments"":39,""totalSumOfUsdValue"":1794955000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":1,""countOfSoldOut"":3,""countOfAddedTo"":26,""countOfReduced"":12,""percOfPortfolioOfTop10"":39.17112128159202,""turnoverPerc"":10.256410256410255,""timeHeldTop10"":19.8,""timeHeldTop20"":18.95,""timeHeldAll"":16.1,""isConfidentialOmitted"":false},{""investorId"":""1044936"",""reportDate"":""2021-09-30"",""totalCountOfInvestments"":41,""totalSumOfUsdValue"":1682115000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":1,""countOfSoldOut"":1,""countOfAddedTo"":11,""countOfReduced"":29,""percOfPortfolioOfTop10"":38.05459198687367,""turnoverPerc"":4.878048780487805,""timeHeldTop10"":18.5,""timeHeldTop20"":17.45,""timeHeldAll"":15.27,""isConfidentialOmitted"":false}],""topInvestments"":[{""ticker"":""EXLS"",""boxoverData"":{""ticker"":""EXLS"",""country"":""USA"",""company"":""ExlService Holdings Inc"",""industry"":""Information Technology Services"",""marketCap"":8083.906433985116},""value"":46083926,""putCall"":""share"",""percentageOfPortfolio"":4.4664791490638365},{""ticker"":""OSIS"",""boxoverData"":{""ticker"":""OSIS"",""country"":""USA"",""company"":""OSI Systems, Inc"",""industry"":""Electronic Components"",""marketCap"":3590.6762620637196},""value"":45263361,""putCall"":""share"",""percentageOfPortfolio"":4.386949543384156},{""ticker"":""DY"",""boxoverData"":{""ticker"":""DY"",""country"":""USA"",""company"":""Dycom Industries, Inc"",""industry"":""Engineering \u0026 Construction"",""marketCap"":5011.3907771855165},""value"":43159744,""putCall"":""share"",""percentageOfPortfolio"":4.183065840678006},{""ticker"":""IDCC"",""boxoverData"":{""ticker"":""IDCC"",""country"":""USA"",""company"":""Interdigital Inc"",""industry"":""Software - Application"",""marketCap"":5515.6133334709775},""value"":42123252,""putCall"":""share"",""percentageOfPortfolio"":4.082608472827631},{""ticker"":""LMB"",""boxoverData"":{""ticker"":""LMB"",""country"":""USA"",""company"":""Limbach Holdings Inc"",""industry"":""Building Products \u0026 Equipment"",""marketCap"":947.0501811990069},""value"":39504511,""putCall"":""share"",""percentageOfPortfolio"":3.8287986721327294},{""ticker"":""CBZ"",""boxoverData"":{""ticker"":""CBZ"",""country"":""USA"",""company"":""Cbiz Inc"",""industry"":""Specialty Business Services"",""marketCap"":4317.899428537628},""value"":37319553,""putCall"":""share"",""percentageOfPortfolio"":3.6170313555074003},{""ticker"":""ATGE"",""boxoverData"":{""ticker"":""ATGE"",""country"":""USA"",""company"":""Adtalem Global Education Inc"",""industry"":""Education \u0026 Training Services"",""marketCap"":3901.444193543789},""value"":36842400,""putCall"":""share"",""percentageOfPortfolio"":3.5707854274713813},{""ticker"":""UMBF"",""boxoverData"":{""ticker"":""UMBF"",""country"":""USA"",""company"":""UMB Financial Corp"",""industry"":""Banks - Regional"",""marketCap"":8020.375866699218},""value"":35339175,""putCall"":""share"",""percentageOfPortfolio"":3.425092043647019}]},{""filer"":{""investorId"":""1720969"",""investorType"":""manager_13f"",""reportDate"":""2024-12-31"",""filerCik"":1720969,""filerTicker"":null,""filerName"":""Legacy Advisors, LLC"",""countOfOtherManagers"":0,""otherManagerCik"":null,""otherManagerCleanedName"":null,""otherManagerName"":null,""seriesId"":null,""seriesLei"":null,""seriesName"":null},""latestSummaries"":[{""investorId"":""1720969"",""reportDate"":""2024-12-31"",""totalCountOfInvestments"":411,""totalSumOfUsdValue"":1030574474,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":53,""countOfSoldOut"":19,""countOfAddedTo"":198,""countOfReduced"":107,""percOfPortfolioOfTop10"":40.73633673174017,""turnoverPerc"":17.51824817518248,""timeHeldTop10"":24.5,""timeHeldTop20"":24.85,""timeHeldAll"":12.05,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2024-09-30"",""totalCountOfInvestments"":378,""totalSumOfUsdValue"":923506719,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":64,""countOfSoldOut"":14,""countOfAddedTo"":185,""countOfReduced"":83,""percOfPortfolioOfTop10"":40.11616606332455,""turnoverPerc"":20.634920634920633,""timeHeldTop10"":25.3,""timeHeldTop20"":25.05,""timeHeldAll"":11.31,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2024-06-30"",""totalCountOfInvestments"":328,""totalSumOfUsdValue"":822638613,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":34,""countOfSoldOut"":20,""countOfAddedTo"":169,""countOfReduced"":85,""percOfPortfolioOfTop10"":44.117898341346155,""turnoverPerc"":16.463414634146343,""timeHeldTop10"":24.3,""timeHeldTop20"":24.15,""timeHeldAll"":11.36,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2024-03-31"",""totalCountOfInvestments"":314,""totalSumOfUsdValue"":791417662,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":30,""countOfSoldOut"":20,""countOfAddedTo"":134,""countOfReduced"":107,""percOfPortfolioOfTop10"":43.042455880899965,""turnoverPerc"":15.92356687898089,""timeHeldTop10"":22.1,""timeHeldTop20"":22.15,""timeHeldAll"":9.65,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2023-12-31"",""totalCountOfInvestments"":306,""totalSumOfUsdValue"":776356522,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":40,""countOfSoldOut"":14,""countOfAddedTo"":133,""countOfReduced"":94,""percOfPortfolioOfTop10"":43.885035205513475,""turnoverPerc"":17.647058823529413,""timeHeldTop10"":23,""timeHeldTop20"":23.2,""timeHeldAll"":11.81,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2023-09-30"",""totalCountOfInvestments"":280,""totalSumOfUsdValue"":620707814,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":26,""countOfSoldOut"":13,""countOfAddedTo"":159,""countOfReduced"":51,""percOfPortfolioOfTop10"":37.46076346317754,""turnoverPerc"":13.928571428571429,""timeHeldTop10"":22.1,""timeHeldTop20"":22.05,""timeHeldAll"":11.44,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2023-06-30"",""totalCountOfInvestments"":267,""totalSumOfUsdValue"":673833427,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":29,""countOfSoldOut"":11,""countOfAddedTo"":134,""countOfReduced"":65,""percOfPortfolioOfTop10"":44.11752891564401,""turnoverPerc"":14.981273408239701,""timeHeldTop10"":19.4,""timeHeldTop20"":21,""timeHeldAll"":10.46,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2023-03-31"",""totalCountOfInvestments"":252,""totalSumOfUsdValue"":542262970,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":22,""countOfSoldOut"":12,""countOfAddedTo"":148,""countOfReduced"":35,""percOfPortfolioOfTop10"":43.11199877800987,""turnoverPerc"":13.492063492063492,""timeHeldTop10"":17.6,""timeHeldTop20"":16.4,""timeHeldAll"":8.72,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2022-12-31"",""totalCountOfInvestments"":242,""totalSumOfUsdValue"":546462501,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":27,""countOfSoldOut"":12,""countOfAddedTo"":142,""countOfReduced"":31,""percOfPortfolioOfTop10"":49.17165468962344,""turnoverPerc"":16.115702479338843,""timeHeldTop10"":18.2,""timeHeldTop20"":17.45,""timeHeldAll"":10.86,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2022-09-30"",""totalCountOfInvestments"":227,""totalSumOfUsdValue"":452766000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":25,""countOfSoldOut"":19,""countOfAddedTo"":117,""countOfReduced"":45,""percOfPortfolioOfTop10"":52.75926195871598,""turnoverPerc"":19.383259911894275,""timeHeldTop10"":18.9,""timeHeldTop20"":15.6,""timeHeldAll"":10.11,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2022-06-30"",""totalCountOfInvestments"":221,""totalSumOfUsdValue"":475633000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":19,""countOfSoldOut"":13,""countOfAddedTo"":124,""countOfReduced"":31,""percOfPortfolioOfTop10"":56.84971396013313,""turnoverPerc"":14.479638009049776,""timeHeldTop10"":16.8,""timeHeldTop20"":14.85,""timeHeldAll"":9.58,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2022-03-31"",""totalCountOfInvestments"":215,""totalSumOfUsdValue"":514989000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":92,""countOfSoldOut"":10,""countOfAddedTo"":86,""countOfReduced"":11,""percOfPortfolioOfTop10"":58.350955068943215,""turnoverPerc"":47.44186046511628,""timeHeldTop10"":15.4,""timeHeldTop20"":14.7,""timeHeldAll"":7.13,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2021-12-31"",""totalCountOfInvestments"":133,""totalSumOfUsdValue"":272566000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":11,""countOfSoldOut"":5,""countOfAddedTo"":27,""countOfReduced"":42,""percOfPortfolioOfTop10"":59.119626072217365,""turnoverPerc"":12.030075187969924,""timeHeldTop10"":16.4,""timeHeldTop20"":16.3,""timeHeldAll"":13.17,""isConfidentialOmitted"":false},{""investorId"":""1720969"",""reportDate"":""2021-09-30"",""totalCountOfInvestments"":127,""totalSumOfUsdValue"":250112000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":10,""countOfSoldOut"":7,""countOfAddedTo"":67,""countOfReduced"":9,""percOfPortfolioOfTop10"":58.23950870010236,""turnoverPerc"":13.385826771653544,""timeHeldTop10"":14,""timeHeldTop20"":15.8,""timeHeldAll"":12.21,""isConfidentialOmitted"":false}],""topInvestments"":[{""ticker"":""MTZ"",""boxoverData"":{""ticker"":""MTZ"",""country"":""USA"",""company"":""Mastec Inc"",""industry"":""Engineering \u0026 Construction"",""marketCap"":10335.411823331573},""value"":111450466,""putCall"":""share"",""percentageOfPortfolio"":10.814401948791136},{""ticker"":""VERX"",""boxoverData"":{""ticker"":""VERX"",""country"":""USA"",""company"":""Vertex Inc"",""industry"":""Software - Application"",""marketCap"":7068.882239075086},""value"":74571510,""putCall"":""share"",""percentageOfPortfolio"":7.235916654384359},{""ticker"":""JGRW"",""boxoverData"":{""ticker"":""JGRW"",""country"":""USA"",""company"":""Jensen Quality Growth ETF"",""industry"":""Exchange Traded Fund"",""aum"":93.307593},""value"":44605844,""putCall"":""share"",""percentageOfPortfolio"":4.3282504200661975},{""ticker"":""AAPL"",""boxoverData"":{""ticker"":""AAPL"",""country"":""USA"",""company"":""Apple Inc"",""industry"":""Consumer Electronics"",""marketCap"":3685665.760190805},""value"":43175164,""putCall"":""share"",""percentageOfPortfolio"":4.1894268768779925},{""ticker"":""IWB"",""boxoverData"":{""ticker"":""IWB"",""country"":""USA"",""company"":""iShares Russell 1000 ETF"",""industry"":""Exchange Traded Fund"",""aum"":40141.566544},""value"":29303996,""putCall"":""share"",""percentageOfPortfolio"":2.84346223774217},{""ticker"":""MSFT"",""boxoverData"":{""ticker"":""MSFT"",""country"":""USA"",""company"":""Microsoft Corporation"",""industry"":""Software - Infrastructure"",""marketCap"":3101197.131897481},""value"":26037318,""putCall"":""share"",""percentageOfPortfolio"":2.526485824837148},{""ticker"":""IJR"",""boxoverData"":{""ticker"":""IJR"",""country"":""USA"",""company"":""iShares Core S\u0026P Small-Cap ETF"",""industry"":""Exchange Traded Fund"",""aum"":88650.871818},""value"":23580810,""putCall"":""share"",""percentageOfPortfolio"":2.2881228474905932},{""ticker"":""SPY"",""boxoverData"":{""ticker"":""SPY"",""country"":""USA"",""company"":""SPDR S\u0026P 500 ETF Trust"",""industry"":""Exchange Traded Fund"",""aum"":637581.571412},""value"":22817026,""putCall"":""share"",""percentageOfPortfolio"":2.214010396690652}]},{""filer"":{""investorId"":""1841506"",""investorType"":""manager_13f"",""reportDate"":""2024-12-31"",""filerCik"":1841506,""filerTicker"":null,""filerName"":""CGN Advisors LLC"",""countOfOtherManagers"":0,""otherManagerCik"":null,""otherManagerCleanedName"":null,""otherManagerName"":null,""seriesId"":null,""seriesLei"":null,""seriesName"":null},""latestSummaries"":[{""investorId"":""1841506"",""reportDate"":""2024-12-31"",""totalCountOfInvestments"":285,""totalSumOfUsdValue"":1029040528,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":24,""countOfSoldOut"":15,""countOfAddedTo"":149,""countOfReduced"":91,""percOfPortfolioOfTop10"":33.399882672065175,""turnoverPerc"":13.684210526315791,""timeHeldTop10"":14.1,""timeHeldTop20"":14.1,""timeHeldAll"":11.6,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2024-09-30"",""totalCountOfInvestments"":276,""totalSumOfUsdValue"":994390637,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":17,""countOfSoldOut"":8,""countOfAddedTo"":174,""countOfReduced"":62,""percOfPortfolioOfTop10"":33.47580504219893,""turnoverPerc"":9.057971014492754,""timeHeldTop10"":13.1,""timeHeldTop20"":13.6,""timeHeldAll"":10.7,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2024-06-30"",""totalCountOfInvestments"":267,""totalSumOfUsdValue"":859212026,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":22,""countOfSoldOut"":6,""countOfAddedTo"":148,""countOfReduced"":76,""percOfPortfolioOfTop10"":32.46459366945592,""turnoverPerc"":10.486891385767791,""timeHeldTop10"":12.1,""timeHeldTop20"":12.8,""timeHeldAll"":9.4,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2024-03-31"",""totalCountOfInvestments"":251,""totalSumOfUsdValue"":787924030,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":13,""countOfSoldOut"":6,""countOfAddedTo"":133,""countOfReduced"":90,""percOfPortfolioOfTop10"":32.74943816601202,""turnoverPerc"":7.569721115537849,""timeHeldTop10"":9.7,""timeHeldTop20"":10.9,""timeHeldAll"":8.68,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2023-12-31"",""totalCountOfInvestments"":244,""totalSumOfUsdValue"":721954864,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":15,""countOfSoldOut"":24,""countOfAddedTo"":91,""countOfReduced"":127,""percOfPortfolioOfTop10"":30.53874736412885,""turnoverPerc"":15.983606557377051,""timeHeldTop10"":10.9,""timeHeldTop20"":11.7,""timeHeldAll"":9.77,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2023-09-30"",""totalCountOfInvestments"":253,""totalSumOfUsdValue"":742972911,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":29,""countOfSoldOut"":2,""countOfAddedTo"":173,""countOfReduced"":39,""percOfPortfolioOfTop10"":28.340424110025186,""turnoverPerc"":12.25296442687747,""timeHeldTop10"":11.1,""timeHeldTop20"":11.3,""timeHeldAll"":8.42,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2023-06-30"",""totalCountOfInvestments"":226,""totalSumOfUsdValue"":697046474,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":17,""countOfSoldOut"":8,""countOfAddedTo"":134,""countOfReduced"":64,""percOfPortfolioOfTop10"":28.347427089918828,""turnoverPerc"":11.061946902654867,""timeHeldTop10"":9.9,""timeHeldTop20"":9.35,""timeHeldAll"":7.62,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2023-03-31"",""totalCountOfInvestments"":217,""totalSumOfUsdValue"":634550668,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":8,""countOfSoldOut"":8,""countOfAddedTo"":140,""countOfReduced"":59,""percOfPortfolioOfTop10"":28.41779515706065,""turnoverPerc"":7.373271889400922,""timeHeldTop10"":7.7,""timeHeldTop20"":7.55,""timeHeldAll"":6.67,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2022-12-31"",""totalCountOfInvestments"":217,""totalSumOfUsdValue"":568296897,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":13,""countOfSoldOut"":21,""countOfAddedTo"":141,""countOfReduced"":58,""percOfPortfolioOfTop10"":27.838552319246606,""turnoverPerc"":15.668202764976957,""timeHeldTop10"":8.2,""timeHeldTop20"":8.05,""timeHeldAll"":7.11,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2022-09-30"",""totalCountOfInvestments"":225,""totalSumOfUsdValue"":398722000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":29,""countOfSoldOut"":9,""countOfAddedTo"":149,""countOfReduced"":38,""percOfPortfolioOfTop10"":25.41595397294355,""turnoverPerc"":16.88888888888889,""timeHeldTop10"":7.2,""timeHeldTop20"":7.2,""timeHeldAll"":5.92,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2022-06-30"",""totalCountOfInvestments"":205,""totalSumOfUsdValue"":354778000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":30,""countOfSoldOut"":41,""countOfAddedTo"":111,""countOfReduced"":59,""percOfPortfolioOfTop10"":26.758423577561178,""turnoverPerc"":34.63414634146341,""timeHeldTop10"":6.3,""timeHeldTop20"":6,""timeHeldAll"":4.78,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2022-03-31"",""totalCountOfInvestments"":216,""totalSumOfUsdValue"":401255000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":23,""countOfSoldOut"":21,""countOfAddedTo"":110,""countOfReduced"":77,""percOfPortfolioOfTop10"":26.40689835640677,""turnoverPerc"":20.37037037037037,""timeHeldTop10"":5,""timeHeldTop20"":4.9,""timeHeldAll"":3.99,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2021-12-31"",""totalCountOfInvestments"":214,""totalSumOfUsdValue"":384154000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":29,""countOfSoldOut"":13,""countOfAddedTo"":147,""countOfReduced"":34,""percOfPortfolioOfTop10"":27.477782347704306,""turnoverPerc"":19.626168224299064,""timeHeldTop10"":4,""timeHeldTop20"":4.1,""timeHeldAll"":3.83,""isConfidentialOmitted"":false},{""investorId"":""1841506"",""reportDate"":""2021-09-30"",""totalCountOfInvestments"":198,""totalSumOfUsdValue"":306053000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":8,""countOfSoldOut"":17,""countOfAddedTo"":126,""countOfReduced"":53,""percOfPortfolioOfTop10"":25.805334370190785,""turnoverPerc"":12.626262626262626,""timeHeldTop10"":3,""timeHeldTop20"":3.25,""timeHeldAll"":3.21,""isConfidentialOmitted"":false}],""topInvestments"":[{""ticker"":""JCPB"",""boxoverData"":{""ticker"":""JCPB"",""country"":""USA"",""company"":""JPMorgan Core Plus Bond ETF"",""industry"":""Exchange Traded Fund"",""aum"":5611.654203},""value"":65180709,""putCall"":""share"",""percentageOfPortfolio"":6.3341245778417},{""ticker"":""SPYG"",""boxoverData"":{""ticker"":""SPYG"",""country"":""USA"",""company"":""SPDR Portfolio S\u0026P 500 Growth ETF"",""industry"":""Exchange Traded Fund"",""aum"":36330.751689},""value"":40987236,""putCall"":""share"",""percentageOfPortfolio"":3.983053619827887},{""ticker"":""SPYV"",""boxoverData"":{""ticker"":""SPYV"",""country"":""USA"",""company"":""SPDR Portfolio S\u0026P 500 Value ETF"",""industry"":""Exchange Traded Fund"",""aum"":25823.043871},""value"":38597914,""putCall"":""share"",""percentageOfPortfolio"":3.7508643196995637},{""ticker"":""VTI"",""boxoverData"":{""ticker"":""VTI"",""country"":""USA"",""company"":""Vanguard Total Stock Market ETF"",""industry"":""Exchange Traded Fund"",""aum"":483140.261101},""value"":35583238,""putCall"":""share"",""percentageOfPortfolio"":3.4579044295911348},{""ticker"":""AVDE"",""boxoverData"":{""ticker"":""AVDE"",""country"":""USA"",""company"":""Avantis International Equity ETF"",""industry"":""Exchange Traded Fund"",""aum"":5767.679534},""value"":34607814,""putCall"":""share"",""percentageOfPortfolio"":3.363114771316373},{""ticker"":""JMBS"",""boxoverData"":{""ticker"":""JMBS"",""country"":""USA"",""company"":""Janus Henderson Mortgage-Backed Securities ETF"",""industry"":""Exchange Traded Fund"",""aum"":4875.290649},""value"":32372453,""putCall"":""share"",""percentageOfPortfolio"":3.145887078220111},{""ticker"":""IQDG"",""boxoverData"":{""ticker"":""IQDG"",""country"":""USA"",""company"":""WisdomTree International Quality Dividend Growth Fund"",""industry"":""Exchange Traded Fund"",""aum"":816.739216},""value"":30980040,""putCall"":""share"",""percentageOfPortfolio"":3.0105753035997043},{""ticker"":""BINC"",""boxoverData"":{""ticker"":""BINC"",""country"":""USA"",""company"":""iShares Flexible Income Active ETF"",""industry"":""Exchange Traded Fund"",""aum"":7896.909212},""value"":25571888,""putCall"":""share"",""percentageOfPortfolio"":2.4850224363563647}]},{""filer"":{""investorId"":""1317209"",""investorType"":""manager_13f"",""reportDate"":""2024-12-31"",""filerCik"":1317209,""filerTicker"":null,""filerName"":""TAURUS ASSET MANAGEMENT, LLC"",""countOfOtherManagers"":0,""otherManagerCik"":null,""otherManagerCleanedName"":null,""otherManagerName"":null,""seriesId"":null,""seriesLei"":null,""seriesName"":null},""latestSummaries"":[{""investorId"":""1317209"",""reportDate"":""2024-12-31"",""totalCountOfInvestments"":88,""totalSumOfUsdValue"":1027827068,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":1,""countOfSoldOut"":3,""countOfAddedTo"":17,""countOfReduced"":37,""percOfPortfolioOfTop10"":46.18622342022228,""turnoverPerc"":4.545454545454546,""timeHeldTop10"":38.3,""timeHeldTop20"":35.25,""timeHeldAll"":29.66,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2024-09-30"",""totalCountOfInvestments"":90,""totalSumOfUsdValue"":1027293005,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":6,""countOfSoldOut"":3,""countOfAddedTo"":28,""countOfReduced"":32,""percOfPortfolioOfTop10"":44.19501717526053,""turnoverPerc"":10,""timeHeldTop10"":40.6,""timeHeldTop20"":36.1,""timeHeldAll"":28.27,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2024-06-30"",""totalCountOfInvestments"":87,""totalSumOfUsdValue"":987207818,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":2,""countOfSoldOut"":4,""countOfAddedTo"":12,""countOfReduced"":48,""percOfPortfolioOfTop10"":44.854889712796016,""turnoverPerc"":6.896551724137931,""timeHeldTop10"":39.6,""timeHeldTop20"":32.15,""timeHeldAll"":28.53,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2024-03-31"",""totalCountOfInvestments"":89,""totalSumOfUsdValue"":987389881,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":2,""countOfSoldOut"":0,""countOfAddedTo"":4,""countOfReduced"":57,""percOfPortfolioOfTop10"":43.42661812228963,""turnoverPerc"":2.247191011235955,""timeHeldTop10"":35.9,""timeHeldTop20"":32,""timeHeldAll"":27.53,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2023-12-31"",""totalCountOfInvestments"":88,""totalSumOfUsdValue"":926024708,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":2,""countOfSoldOut"":3,""countOfAddedTo"":9,""countOfReduced"":42,""percOfPortfolioOfTop10"":44.34992516419983,""turnoverPerc"":5.681818181818182,""timeHeldTop10"":38,""timeHeldTop20"":33.15,""timeHeldAll"":28.72,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2023-09-30"",""totalCountOfInvestments"":89,""totalSumOfUsdValue"":824311186,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":0,""countOfSoldOut"":3,""countOfAddedTo"":8,""countOfReduced"":38,""percOfPortfolioOfTop10"":44.661585727892806,""turnoverPerc"":3.3707865168539324,""timeHeldTop10"":36.6,""timeHeldTop20"":33.8,""timeHeldAll"":27.53,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2023-06-30"",""totalCountOfInvestments"":92,""totalSumOfUsdValue"":860497383,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":2,""countOfSoldOut"":1,""countOfAddedTo"":10,""countOfReduced"":43,""percOfPortfolioOfTop10"":44.29897818759549,""turnoverPerc"":3.260869565217391,""timeHeldTop10"":35.6,""timeHeldTop20"":31.1,""timeHeldAll"":25.67,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2023-03-31"",""totalCountOfInvestments"":91,""totalSumOfUsdValue"":818070923,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":3,""countOfSoldOut"":2,""countOfAddedTo"":5,""countOfReduced"":53,""percOfPortfolioOfTop10"":43.53944333992665,""turnoverPerc"":5.4945054945054945,""timeHeldTop10"":34.2,""timeHeldTop20"":30.25,""timeHeldAll"":24.3,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2022-12-31"",""totalCountOfInvestments"":90,""totalSumOfUsdValue"":787136055,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":3,""countOfSoldOut"":0,""countOfAddedTo"":5,""countOfReduced"":46,""percOfPortfolioOfTop10"":43.6986290762656,""turnoverPerc"":3.3333333333333335,""timeHeldTop10"":29.9,""timeHeldTop20"":29.3,""timeHeldAll"":25.37,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2022-09-30"",""totalCountOfInvestments"":87,""totalSumOfUsdValue"":747284000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":0,""countOfSoldOut"":0,""countOfAddedTo"":9,""countOfReduced"":47,""percOfPortfolioOfTop10"":44.90929820523389,""turnoverPerc"":0,""timeHeldTop10"":30.1,""timeHeldTop20"":29.2,""timeHeldAll"":24.87,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2022-06-30"",""totalCountOfInvestments"":87,""totalSumOfUsdValue"":810750000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":3,""countOfSoldOut"":5,""countOfAddedTo"":9,""countOfReduced"":49,""percOfPortfolioOfTop10"":44.13209990749306,""turnoverPerc"":9.195402298850574,""timeHeldTop10"":29.1,""timeHeldTop20"":26.95,""timeHeldAll"":23.41,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2022-03-31"",""totalCountOfInvestments"":89,""totalSumOfUsdValue"":992749000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":4,""countOfSoldOut"":9,""countOfAddedTo"":15,""countOfReduced"":49,""percOfPortfolioOfTop10"":45.48823519338725,""turnoverPerc"":14.606741573033707,""timeHeldTop10"":26.3,""timeHeldTop20"":25.55,""timeHeldAll"":21.82,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2021-12-31"",""totalCountOfInvestments"":94,""totalSumOfUsdValue"":1060673000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":3,""countOfSoldOut"":3,""countOfAddedTo"":25,""countOfReduced"":34,""percOfPortfolioOfTop10"":47.33032706592889,""turnoverPerc"":6.382978723404255,""timeHeldTop10"":29,""timeHeldTop20"":26.1,""timeHeldAll"":21.71,""isConfidentialOmitted"":false},{""investorId"":""1317209"",""reportDate"":""2021-09-30"",""totalCountOfInvestments"":94,""totalSumOfUsdValue"":961163000,""totalSumOfUsdValuePrevQ"":null,""countOfNewPurchased"":2,""countOfSoldOut"":4,""countOfAddedTo"":15,""countOfReduced"":49,""percOfPortfolioOfTop10"":46.472762684372995,""turnoverPerc"":6.382978723404255,""timeHeldTop10"":27.2,""timeHeldTop20"":24.7,""timeHeldAll"":20.78,""isConfidentialOmitted"":false}],""topInvestments"":[{""ticker"":""AAPL"",""boxoverData"":{""ticker"":""AAPL"",""country"":""USA"",""company"":""Apple Inc"",""industry"":""Consumer Electronics"",""marketCap"":3685665.760190805},""value"":81346182,""putCall"":""share"",""percentageOfPortfolio"":7.914384095593793},{""ticker"":""MSFT"",""boxoverData"":{""ticker"":""MSFT"",""country"":""USA"",""company"":""Microsoft Corporation"",""industry"":""Software - Infrastructure"",""marketCap"":3101197.131897481},""value"":77169485,""putCall"":""share"",""percentageOfPortfolio"":7.508022254187219},{""ticker"":""AMZN"",""boxoverData"":{""ticker"":""AMZN"",""country"":""USA"",""company"":""Amazon.com Inc"",""industry"":""Internet Retail"",""marketCap"":2356193.0049508503},""value"":54824675,""putCall"":""share"",""percentageOfPortfolio"":5.334036892673078},{""ticker"":""JPM"",""boxoverData"":{""ticker"":""JPM"",""country"":""USA"",""company"":""JPMorgan Chase \u0026 Co"",""industry"":""Banks - Diversified"",""marketCap"":746108.9795694},""value"":49344064,""putCall"":""share"",""percentageOfPortfolio"":4.800813827175838},{""ticker"":""GOOG"",""boxoverData"":{""ticker"":""GOOG"",""country"":""USA"",""company"":""Alphabet Inc"",""industry"":""Internet Content \u0026 Information"",""marketCap"":2256905.9952591965},""value"":48007258,""putCall"":""share"",""percentageOfPortfolio"":4.670752453855399},{""ticker"":""V"",""boxoverData"":{""ticker"":""V"",""country"":""USA"",""company"":""Visa Inc"",""industry"":""Credit Services"",""marketCap"":683458.8572486785},""value"":37972206,""putCall"":""share"",""percentageOfPortfolio"":3.694415839221701},{""ticker"":""DHR"",""boxoverData"":{""ticker"":""DHR"",""country"":""USA"",""company"":""Danaher Corp"",""industry"":""Diagnostics \u0026 Research"",""marketCap"":150551.03691617915},""value"":33842557,""putCall"":""share"",""percentageOfPortfolio"":3.2926314215340353},{""ticker"":""INTU"",""boxoverData"":{""ticker"":""INTU"",""country"":""USA"",""company"":""Intuit Inc"",""industry"":""Software - Application"",""marketCap"":160728.21767277506},""value"":32605952,""putCall"":""share"",""percentageOfPortfolio"":3.172318867165697}]}],""page"":200,""pageSize"":12,""totalItemsCount"":15990,""totalPages"":1333}</script>
+<script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/9215.6284487a.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/4625.6f10649a.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/7502.56d7bd1a.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/3143.45bb1d5d.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/5869.35a779df.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/8101.0ce91fd6.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/1597.da424f86.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/6019.96b89dd3.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/7641.9d94d1e0.js""></script><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/main.dda5241c.js""></script><div class=""my-3""><div class=""relative overflow-hidden flex items-center justify-center w-full mx-auto"" id=""IC_D_3x3_1"" style=""width:970px;height:250px;max-height:250px""></div></div>
+<div class=""footer"" style=""margin-top: 20px;padding-bottom: 115px"">
+<div class=""footer_links"">
+<a class=""tab-link"" href=""/affiliate.ashx"">affiliate</a>
+<span class=""footer_dot""> • </span>
+<a class=""tab-link"" href=""/advertise.ashx"">advertise</a>
+<span class=""footer_dot""> • </span><a class=""tab-link"" href=""#"" onclick=""setChartThemeCookie('light')"">toggle light mode</a>
+<span class=""footer_dot""> • </span>
+<a class=""tab-link"" href=""/contact.ashx"">contact</a>
+<span class=""footer_dot""> • </span>
+<a class=""tab-link"" href=""/help/screener.ashx"">help</a>
+<span class=""footer_dot""> • </span>
+<a class=""tab-link"" href=""/privacy.ashx"">privacy</a><span class=""footer_dot""> • </span><a class=""tab-link"" href=""javascript:void(0)"" onclick=""window.__uspapi &amp;&amp; window.__uspapi('displayUspUi');"">do not sell my data</a> </div>
+    Quotes delayed 15 minutes for NASDAQ, NYSE and AMEX.
+    <br/>
+    Copyright © 2007-2025 FINVIZ.com. All Rights Reserved.
+    
+</div><script onerror=""window.handleScriptNotLoaded(this)"" src=""/assets/dist/script/refresh.47ceb69a.js"" type=""text/javascript""></script>
+<script>RefreshInit(300, ['insider-table'], 1);</script>
+<script>
+                window.dataLayer = window.dataLayer || [];
+            </script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-537M973G');</script>
+<script>
+              function getSystemTheme() {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  return 'Dark';
+                }
+                else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                  return 'Light';
+                }
+                return 'No Preference';
+              }
+
+              var systemTheme = getSystemTheme()
+
+              const headlessChrome = navigator.userAgent.includes('HeadlessChrome')
+              const webdriver = navigator.webdriver
+
+              let cdp = false
+              try {
+                let accessed = false
+                const e = new window.Error('ignore')
+                window.Object.defineProperty(e, 'stack', {
+                  configurable: false,
+                  enumerable: false,
+                  get: function () {
+                    accessed = true
+                    return ''
+                  },
+                })
+                // This is part of the detection and shouldn't be deleted
+                window.console.debug(e)
+                cdp = accessed
+              } catch {}
+
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              var fGaM = {
+                'dimension1': 'NotLoggedIn',
+                'dimension3': window.devicePixelRatio,
+                'layoutTheme': 'dark',
+                'systemTheme': systemTheme,
+                'bundle': 'modern',
+                innerWidth: window.innerWidth,
+                innerHeight: window.innerHeight,
+                webdriver: webdriver,
+                cdp: cdp,
+                isBot: headlessChrome || webdriver || cdp,
+                icAdsVariant: 'control',
+              };
+
+              gtag('config', 'G-ZT9VQEWD4N', fGaM);
+              
+            </script>
+<script type=""text/javascript"">
+        window._qevents = window._qevents || [];
+
+        (function() {
+            var elem = document.createElement('script');
+            elem.src = (document.location.protocol == ""https:"" ? ""https://secure"" : ""http://edge"") + "".quantserve.com/quant.js"";
+            elem.async = true;
+            elem.type = ""text/javascript"";
+            var scpt = document.getElementsByTagName('script')[0];
+            scpt.parentNode.insertBefore(elem, scpt);
+        })();
+
+        window._qevents.push({
+            qacct:""p-c2W8esUZ6Q8oA""
+        });
+    </script>
+<noscript>
+<div style=""display:none;"">
+<img alt=""Quantcast"" border=""0"" height=""1"" src=""//pixel.quantserve.com/pixel/p-c2W8esUZ6Q8oA.gif"" width=""1"">
+</img></div>
+</noscript><div class=""relative overflow-hidden flex items-center justify-center w-full mx-auto"" id=""IC_D_1x1_1""></div><div class=""modal-elite-ad"" id=""modal-elite-ad"">
+<div class=""modal-elite-ad_content"" id=""modal-elite-ad_content"">
+<button class=""modal-elite-ad_close"" id=""modal-elite-ad-close"" type=""button"">×</button>
+<!--<div id=""modal-elite-ad-content-0"" style=""display: none"">
+			                        <h2>Ever heard of Finviz*Elite?</h2>
+                                    <p>
+                                        Our premium service offers you real-time quotes, advanced visualizations, technical studies, and much more.<br>
+                                        Become Elite and make informed financial decisions.
+                                    </p>
+                                    <a href=""/elite.ashx?utm_source=finviz&utm_medium=banner&utm_campaign=modal-0"" id=""modal-elite-ad-btn-0"" class="""" target=""_blank"">Find out more</a>
+                                </div>-->
+<div id=""modal-elite-ad-content-1"" style=""display: block"">
+<h2>Upgrade your FINVIZ experience</h2>
+<p>
+                                        Join thousands of traders who make more informed decisions with our premium features.
+                                        Real-time quotes, advanced visualizations, backtesting, and much more.
+                                    </p>
+<a class=""modal-elite_button"" href=""/elite.ashx?utm_source=finviz&amp;utm_medium=banner&amp;utm_campaign=modal-1"" id=""modal-elite-ad-btn-1"" target=""_blank"">Learn more about FINVIZ*Elite</a>
+</div>
+</div>
+</div><script async="""" src=""/assets/dist/script/pv.27fa030f.js""></script><script defer="""">window.renderScriptNotLoaded();</script>
+</body>
+</html>","
+"
