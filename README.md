@@ -1,1 +1,1 @@
-# MarketBeat-LLM
+# MarketBeat
